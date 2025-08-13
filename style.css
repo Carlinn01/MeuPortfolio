@@ -1,0 +1,761 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Added animated background particles */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 80%, rgba(11, 3, 205, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(11, 3, 205, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn-contato,
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+h2.titulo {
+  color: #fff;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 60px;
+  position: relative;
+  text-shadow: 0 0 20px rgba(11, 3, 205, 0.5);
+}
+
+/* Added glowing underline animation to titles */
+h2.titulo::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #0b03cd, transparent);
+  border-radius: 2px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #0b03cd;
+  }
+  to {
+    box-shadow: 0 0 20px #0b03cd, 0 0 30px #0b03cd;
+  }
+}
+
+h2.titulo span {
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+button:hover {
+  box-shadow: 0px 0px 20px rgba(11, 3, 205, 0.6);
+  transform: scale(1.05);
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+  padding: 15px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(11, 3, 205, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Added scroll effect for header */
+header.scrolled {
+  padding: 10px 4%;
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 5px 30px rgba(11, 3, 205, 0.2);
+}
+
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  font-size: 16px;
+  color: #b3b0b0;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Enhanced hover effects for navigation */
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0b03cd, #4c6ef5);
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+header a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+header .btn-contrate button {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+  border: 0;
+  border-radius: 25px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Added ripple effect to button */
+header .btn-contrate button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+header .btn-contrate button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.logo {
+  text-align: center;
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 30px rgba(11, 3, 205, 0.5);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+  padding: 140px 4% 80px 4%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: space-between;
+  gap: 90px;
+}
+
+.topo-do-site h1 {
+  color: #fff;
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.topo-do-site h1 span {
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.topo-do-site p {
+  color: #b3b0b0;
+  margin: 40px 0;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.btn-contato button {
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 3, 205, 0.3);
+}
+
+.btn-contato button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(11, 3, 205, 0.5);
+}
+
+.topo-do-site .img-topo-site {
+  position: relative;
+}
+
+/* Enhanced floating animation and glow effect */
+.topo-do-site .img-topo-site img {
+  position: relative;
+  animation: flutuar 3s ease-in-out infinite alternate;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(11, 3, 205, 0.4);
+  border: 3px solid rgba(11, 3, 205, 0.3);
+}
+
+.topo-do-site .img-topo-site::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(45deg, #0b03cd, transparent, #4c6ef5, transparent);
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+  padding: 100px 4%;
+  background: rgba(11, 3, 205, 0.02);
+  position: relative;
+}
+
+section.especialidades .flex {
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.especialidades-box {
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 45px;
+  transition: all 0.4s ease;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Added hover glow and transform effects */
+.especialidades-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(11, 3, 205, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.especialidades-box:hover::before {
+  left: 100%;
+}
+
+.especialidades-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(11, 3, 205, 0.2);
+  border-color: rgba(11, 3, 205, 0.3);
+}
+
+.especialidades-box i {
+  font-size: 50px;
+  display: block;
+  margin: 0 auto 20px auto;
+  filter: drop-shadow(0 0 10px rgba(11, 3, 205, 0.5));
+}
+
+.especialidades-box h3 {
+  font-size: 24px;
+  margin: 15px 0;
+  background: linear-gradient(45deg, #fff, #b3b0b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.especialidades-box p {
+  color: #b3b0b0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ESTILO SOBRE MIM */
+section.sobre {
+  padding: 100px 4%;
+}
+
+section.sobre .flex {
+  align-items: center;
+  gap: 60px;
+}
+
+.img-sobre {
+  position: relative;
+}
+
+.img-sobre img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(11, 3, 205, 0.3);
+  box-shadow: 0 0 40px rgba(11, 3, 205, 0.3);
+  transition: all 0.3s ease;
+}
+
+.img-sobre img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(11, 3, 205, 0.5);
+}
+
+.txt-sobre {
+  color: #fff;
+  flex: 1;
+}
+
+.txt-sobre h2 {
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.txt-sobre h2 span {
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.txt-sobre p {
+  margin: 20px 0;
+  color: #b3b0b0;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Enhanced social media buttons with better gradients and animations */
+.btn-social button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-social button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.btn-social button:hover::after {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-social a:nth-child(1) button {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(240, 148, 51, 0.3);
+}
+
+
+
+.btn-social a:nth-child(2) button {
+  background: linear-gradient(45deg, #333, #24292e, #000);
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(36, 41, 46, 0.3);
+}
+
+
+.btn-social a:nth-child(3) button {
+  background: linear-gradient(45deg, #43e55e, #3dd5f3, #00d4aa);
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(67, 229, 94, 0.3);
+}
+
+
+
+.btn-social button:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 30px rgba(11, 3, 205, 0.4);
+}
+
+/* ESTILO PORTFÓLIO */
+section.portfolio {
+  padding: 100px 4%;
+  background: rgba(11, 3, 205, 0.02);
+}
+
+section.portfolio .flex {
+  justify-content: space-around;
+  margin-top: 60px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.img-portfolio {
+  width: 360px;
+  height: 460px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced portfolio hover effects */
+.img-portfolio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(11, 3, 205, 0.8), rgba(76, 110, 245, 0.8));
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.img-portfolio:hover::before {
+  opacity: 1;
+}
+
+.img-portfolio:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.img-portfolio:hover .overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(-10px);
+}
+
+
+/* Rodapé */
+
+footer{
+  padding: 60px 4%;
+  box-shadow: 0 0 35px #0b03cd;
+}
+
+footer .flex{
+  justify-content: space-between;
+}
+
+.borda{
+  border-top: 2px solid #030133;
+}
+
+footer .line-footer{
+  padding: 20px 0;
+
+}
+
+footer .line-footer p i{
+  color: #030133;
+  font-size: 22px;
+
+}
+
+footer .line-footer a{
+  color: #fff;
+}
+
+/* Responsividade Tablet */
+@media screen and (max-width:1020px) {
+  /* Menu */
+  .Menu-Desktop, .btn-contrate {
+    display: none;
+  }
+
+  /* Layout topo */
+  section.topo-do-site .flex {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .topo-do-site h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .topo-do-site p {
+    margin: 20px auto;
+    font-size: 16px;
+  }
+
+  .img-topo-site img {
+    max-width: 300px;
+  }
+
+  /* Sobre */
+  section.sobre .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .txt-sobre h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .txt-sobre p {
+    font-size: 15px;
+  }
+}
+
+/* Responsividade Celular */
+@media screen and (max-width:600px) {
+  h2.titulo {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  /* Especialidades */
+  .especialidades-box {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  /* Portfólio */
+  .img-portfolio {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Botões */
+  .btn-contato button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  /* Rodapé */
+  footer .flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* Esconde o checkbox */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+/* Botão hambúrguer */
+.menu-toggle-btn {
+  display: none;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+  box-shadow: 0 10px 25px rgba(11, 3, 205, 0.35);
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle-btn span {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle-btn span:nth-child(1) { top: 14px; }
+.menu-toggle-btn span:nth-child(2) { top: 22px; }
+.menu-toggle-btn span:nth-child(3) { top: 30px; }
+
+/* Mobile */
+@media screen and (max-width: 1020px) {
+  .menu-toggle-btn {
+    display: flex;
+  }
+
+  .Menu-Desktop {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0,0,0,0.96);
+    backdrop-filter: blur(14px);
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 1001;
+  }
+
+  /* Mostra o menu quando checkbox está marcado */
+  .menu-toggle-checkbox:checked ~ .Menu-Desktop {
+    display: flex;
+  }
+
+  /* Anima o ícone */
+  .menu-toggle-checkbox:checked + .menu-toggle-btn span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle-checkbox:checked + .menu-toggle-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle-checkbox:checked + .menu-toggle-btn span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
