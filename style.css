@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Added animated background particles */
+/*Animação */
 body::before {
   content: "";
   position: fixed;
@@ -98,7 +98,7 @@ h2.titulo span {
   background-clip: text;
 }
 
-button:hover {
+button:hover, form .btn-enviar input:hover {
   box-shadow: 0px 0px 20px rgba(11, 3, 205, 0.6);
   transform: scale(1.05);
 }
@@ -203,7 +203,7 @@ header .btn-contrate button:hover::before {
 }
 
 .logo {
-  text-align: center;
+  text-align: start;
   background: linear-gradient(45deg, #0b03cd, #4c6ef5, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -581,35 +581,218 @@ section.portfolio .flex {
   transform: translate(-50%, -50%) translateY(-10px);
 }
 
+/* Formulario */
 
-/* Rodapé */
-
-footer{
-  padding: 60px 4%;
-  box-shadow: 0 0 35px #0b03cd;
+#formulario {
+  scroll-margin-top: 20px;
 }
 
-footer .flex{
-  justify-content: space-between;
+section.formulario{
+  padding: 80px 4%;
 }
 
-.borda{
-  border-top: 2px solid #030133;
+form{
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
 }
 
-footer .line-footer{
-  padding: 20px 0;
-
-}
-
-footer .line-footer p i{
-  color: #030133;
-  font-size: 22px;
-
-}
-
-footer .line-footer a{
+form input, form textarea{
+  width: 100%;
+  background-color: #00000077;
+  border: 0;
+  outline: 0;
+  padding: 20px 15px;
+  border-radius: 15px;
   color: #fff;
+  font-size: 18px;
+}
+
+form textarea{
+  resize: none;
+  max-height: 200px;
+}
+
+form .btn-enviar{
+  margin-top: 20px;
+  text-align: center;
+}
+
+form .btn-enviar input{
+  width: 120px;
+  background-color: rgba(11, 3, 205, 0.5);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Rodapé profissional melhorado */
+footer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  padding: 60px 4% 20px 4%;
+  border-top: 1px solid rgba(11, 3, 205, 0.2);
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0b03cd, transparent);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #0b03cd, #4c6ef5);
+  border-radius: 1px;
+}
+
+.footer-description {
+  color: #b3b0b0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 15px;
+  max-width: 280px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #b3b0b0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 15px;
+}
+
+.footer-links a::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: #0b03cd;
+  font-size: 8px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 20px;
+}
+
+.footer-links a:hover::before {
+  color: #4c6ef5;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: #b3b0b0;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  color: #0b03cd;
+  width: 16px;
+  text-align: center;
+}
+
+.contact-info a {
+  color: #b3b0b0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+.footer-section .btn-social {
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-section .btn-social button {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  color: #b3b0b0;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-bottom .fas.fa-heart {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* Responsividade Tablet */
