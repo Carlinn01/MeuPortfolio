@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (konamiCode.join(",") === konamiSequence.join(",")) {
-      // Efeito especial
+
       document.body.style.animation = "rainbow 2s ease-in-out"
       setTimeout(() => {
         document.body.style.animation = ""
@@ -205,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // CSS para o easter egg
   const style = document.createElement("style")
   style.textContent = `
         @keyframes rainbow {
@@ -221,5 +220,4 @@ document.addEventListener("DOMContentLoaded", () => {
     `
   document.head.appendChild(style)
 
-  console.log("🚀 Portfolio otimizado carregado com sucesso!")
 })
