@@ -37,6 +37,11 @@
                     <li><a href="#projetos">Projetos</a></li>
                 </ul>
             </nav>
+            <div class="theme-controls">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
             <div class="btn-contrate">
                 <a href="#formulario">
                     <button>Contrate-me</button>
@@ -46,14 +51,14 @@
     </header>
 
     <main>
-        <section id="inicio" class="topo-do-site">
+        <section id="inicio" class="topo-do-site fade-in">
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
                         <h1>Impulsionando suas <span>experiências digitais</span>.</h1>
                         <p>Desenvolvedor Full Stack especializado em criar soluções web modernas e eficientes.
                             Transformo ideias em realidade digital com código limpo e design intuitivo.</p>
-                             <div class="btn-contato">
+                        <div class="btn-contato">
                             <a href="#formulario">
                                 <button>Entre em contato</button>
                             </a>
@@ -66,7 +71,7 @@
             </div>
         </section>
 
-        <section id="especialidades" class="especialidades">
+        <section id="especialidades" class="especialidades fade-in">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span></h2>
                 <div class="flex">
@@ -96,7 +101,7 @@
             </div>
         </section>
 
-        <section id="sobre" class="sobre">
+        <section id="sobre" class="sobre fade-in">
             <div class="interface">
                 <div class="flex">
                     <div class="img-sobre">
@@ -120,7 +125,7 @@
             </div>
         </section>
 
-        <section id="projetos" class="portfolio">
+        <section id="projetos" class="portfolio fade-in">
             <div class="interface">
                 <h2 class="titulo">MEU <span>PORTFÓLIO</span></h2>
                 <div class="flex">
@@ -137,13 +142,15 @@
             </div>
         </section>
 
-        <section id="formulario" class="formulario">
+        <section id="formulario" class="formulario fade-in">
             <div class="interface">
-                <h2 class="titulo">FALA <span>COMIGO!</span></h2>
+                <h2 class="titulo">Entre em <span>Contato!</span></h2>
 
                 <form action="https://formsubmit.co/carloseduardodalazenoliveira@gmail.com" method="POST">
                     <input type="text" name="nome" placeholder="Seu Nome:" required>
                     <input type="email" name="email" placeholder="Seu Email:" required>
+                    <input type="hidden" name="_captcha" value="false"> 
+                    <input type="hidden" name="_next" value="https://carlosoliveira.vercel.app/obrigado.html">
                     <input type="text" name="telefone" placeholder="Seu Telefone:">
                     <textarea name="mensagem" placeholder="Sua Mensagem:" required></textarea>
                     <div class="btn-enviar">
@@ -155,7 +162,7 @@
 
     </main>
 
-    <footer>
+    <footer class="fade-in">
         <div class="interface">
             <div class="footer-content">
                 <div class="footer-section">
@@ -209,6 +216,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Adicionado script JavaScript para funcionalidades -->
+    <script src="script.js"></script>
 </body>
 
 </html>
