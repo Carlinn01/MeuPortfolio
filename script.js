@@ -169,10 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Aplicar debounce ao scroll
-  const debouncedScroll = debounce(() => {
-    // Código de scroll otimizado já aplicado acima
-  }, 10)
 
   // Preload de hover states para melhor performance
   const hoverElements = document.querySelectorAll(".especialidades-box, .img-portfolio, .btn-social button")
@@ -186,24 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Easter egg - Konami code
-  const konamiCode = []
-  const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
-
-  document.addEventListener("keydown", (e) => {
-    konamiCode.push(e.keyCode)
-    if (konamiCode.length > konamiSequence.length) {
-      konamiCode.shift()
-    }
-
-    if (konamiCode.join(",") === konamiSequence.join(",")) {
-
-      document.body.style.animation = "rainbow 2s ease-in-out"
-      setTimeout(() => {
-        document.body.style.animation = ""
-      }, 2000)
-    }
-  })
 
   const style = document.createElement("style")
   style.textContent = `
