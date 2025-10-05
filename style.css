@@ -101,7 +101,7 @@ body::before {
   display: flex;
 }
 
-.btn-contato,
+
 .btn-social {
   display: flex;
   align-items: center;
@@ -297,7 +297,7 @@ header .btn-contrate button:hover::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 800;
   line-height: 36px;
   cursor: pointer;
@@ -364,6 +364,8 @@ section.topo-do-site .flex {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(11, 3, 205, 0.3);
 }
+
+
 
 .btn-contato button:hover {
   transform: translateY(-3px);
