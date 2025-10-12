@@ -1089,3 +1089,168 @@ footer::before {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+/* ===== ESTILO MENU HAMBÚRGUER (MOBILE) - VERSÃO CORRIGIDA E AVANÇADA ===== */
+
+/* Esconde o checkbox que controla o menu */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+/* Estilo do botão (ícone hambúrguer) */
+.menu-toggle-btn {
+  display: none; /* Só aparece em telas menores */
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1002; /* Garante que o botão fique acima do menu */
+  border-radius: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--shadow-color);
+}
+
+/* As 3 linhas do ícone hambúrguer */
+.menu-toggle-btn span {
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 3px;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.3s ease-in-out, top 0.4s ease;
+}
+
+.menu-toggle-btn span:nth-child(1) {
+  top: 12px;
+}
+.menu-toggle-btn span:nth-child(2) {
+  top: 21px; /* Barra do meio */
+}
+.menu-toggle-btn span:nth-child(3) {
+  top: 30px;
+}
+
+/* Media Query para exibir o menu em telas menores */
+@media screen and (max-width: 1020px) {
+  /* CORREÇÃO: Apenas o botão de contratação é escondido aqui */
+  .btn-contrate {
+    display: none;
+  }
+  
+  /* Exibe o botão do menu hambúrguer */
+  .menu-toggle-btn {
+    display: flex;
+  }
+  
+  /* O menu de navegação é transformado em overlay */
+  header nav.Menu-Desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--bg-primary); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ocupa a tela inteira */
+    z-index: 1001;
+    padding: 20px;
+    
+    /* Estado inicial: escondido */
+    opacity: 0;
+    clip-path: circle(20px at calc(100% - 60px) 45px);
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.9, 0, 0.1, 1);
+  }
+
+  /* O <ul> dentro do menu ocupa o espaço disponível */
+  header nav.Menu-Desktop ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    gap: 15px;
+  }
+
+  /* Estado inicial dos itens da lista para a animação */
+  header nav.Menu-Desktop ul li {
+    display: block; /* Garante que o item da lista se comporte como esperado */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 100%;
+    max-width: 300px; /* Limita a largura dos links */
+    text-align: center;
+  }
+
+  /* Estilo dos links dentro do menu mobile */
+  header nav.Menu-Desktop a {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 10px;
+    display: block; /* Faz o link ocupar todo o <li> */
+    width: 100%;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  header nav.Menu-Desktop a:hover {
+    color: var(--text-primary);
+    background-color: var(--border-accent);
+    transform: translateY(0);
+  }
+
+  header nav.Menu-Desktop a::after {
+    display: none; /* Remove a linha abaixo do link no mobile */
+  }
+
+  /* QUANDO O MENU ESTÁ ABERTO (checkbox marcado) */
+  .menu-toggle-checkbox:checked ~ nav.Menu-Desktop {
+    opacity: 1;
+    clip-path: circle(150% at calc(100% - 60px) 45px);
+    pointer-events: auto;
+  }
+  
+  /* Ativa a animação em cascata quando o menu está aberto */
+  .menu-toggle-checkbox:checked ~ nav.Menu-Desktop li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Adiciona o atraso para cada item aparecer em sequência */
+  .menu-toggle-checkbox:checked ~ nav.Menu-Desktop li:nth-child(1) { transition-delay: 0.2s; }
+  .menu-toggle-checkbox:checked ~ nav.Menu-Desktop li:nth-child(2) { transition-delay: 0.3s; }
+  .menu-toggle-checkbox:checked ~ nav.Menu-Desktop li:nth-child(3) { transition-delay: 0.4s; }
+  .menu-toggle-checkbox:checked ~ nav.Menu-Desktop li:nth-child(4) { transition-delay: 0.5s; }
+  /* Adicione mais linhas se tiver mais itens de menu */
+
+
+  /* Animação do ícone para virar um "X" */
+  .menu-toggle-checkbox:checked + .menu-toggle-btn span:nth-child(1) {
+    top: 21px;
+    transform: rotate(135deg);
+  }
+  .menu-toggle-checkbox:checked + .menu-toggle-btn span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .menu-toggle-checkbox:checked + .menu-toggle-btn span:nth-child(3) {
+    top: 21px;
+    transform: rotate(-135deg);
+  }
+}
