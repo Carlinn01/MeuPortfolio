@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportForYou - Rede Social Esportiva | Carlos Oliveira</title>
+    <meta name="description" content="SportForYou é uma rede social baseada em esportes desenvolvida com MySQL, PHP, HTML, JavaScript e CSS para o trabalho final de programação e DPI.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .project-detail-page {
+            padding: 140px 4% 100px 4%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .project-header h1 {
+            color: #fff !important;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .project-header h1 span {
+            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            background-image: url('img/sportforyou2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            margin: 0 auto 60px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        .project-section h2 {
+            color: #fff !important;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project-section h2 i {
+            color: #0b03cd;
+            font-size: 32px;
+        }
+
+        .project-section p {
+            color: #b3b0b0 !important;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .technologies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: #0b03cd;
+            box-shadow: 0 10px 20px var(--shadow-color);
+        }
+
+        .tech-item i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #0b03cd;
+        }
+
+        .tech-item h3 {
+            color: #fff !important;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* Forçar visibilidade mesmo com fade-in */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .project-link {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(11, 3, 205, 0.5);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            border-color: #0b03cd;
+            box-shadow: 0 5px 20px var(--shadow-color);
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-image {
+                height: 300px;
+            }
+
+            .project-section {
+                padding: 25px;
+            }
+
+            .back-button {
+                top: 80px;
+                left: 10px;
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html#projetos" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Voltar
+    </a>
+
+    <main class="project-detail-page">
+        <div class="interface">
+            <div class="project-header">
+                <h1>SportForYou - Rede Social <span>Esportiva</span></h1>
+            </div>
+
+            <div class="project-image"></div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-info-circle"></i> Sobre o Projeto</h2>
+                    <p>
+                        O SportForYou é uma rede social completa desenvolvida especialmente para 
+                        amantes de esportes. Este projeto foi desenvolvido como trabalho final 
+                        de Programação e DPI (Desenvolvimento de Projetos de Informática), 
+                        demonstrando habilidades em desenvolvimento web full stack.
+                    </p>
+                    <p>
+                        A plataforma permite que usuários se conectem, compartilhem conteúdos 
+                        esportivos, interajam com outros usuários e acompanhem notícias e 
+                        eventos relacionados ao mundo dos esportes. O projeto integra 
+                        tecnologias modernas para criar uma experiência completa e interativa.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Objetivo</h2>
+                    <p>
+                        Este projeto foi desenvolvido com os seguintes objetivos:
+                    </p>
+                    <ul style="color: #b3b0b0 !important; line-height: 2; font-size: 18px; margin-left: 20px; list-style-type: disc;">
+                        <li>Criar uma rede social focada em esportes</li>
+                        <li>Demonstrar conhecimentos em desenvolvimento web full stack</li>
+                        <li>Implementar sistema de autenticação e gerenciamento de usuários</li>
+                        <li>Criar interface interativa e responsiva</li>
+                        <li>Integrar banco de dados para armazenamento de informações</li>
+                        <li>Desenvolver funcionalidades de rede social (posts, interações, perfil)</li>
+                        <li>Atender requisitos do trabalho final de Programação e DPI</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Tecnologias Utilizadas</h2>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <h3>MySQL</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Banco de dados</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-php"></i>
+                            <h3>PHP</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Backend</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Estrutura</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Interatividade</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Estilização</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-wrench"></i> O Que Foi Utilizado</h2>
+                    <p>
+                        <strong>MySQL:</strong> Utilizei MySQL como sistema de gerenciamento de banco de dados 
+                        relacional para armazenar todas as informações da rede social, incluindo dados de usuários, 
+                        posts, comentários e interações. O MySQL proporciona uma base sólida e confiável para 
+                        aplicações web que requerem armazenamento estruturado de dados.
+                    </p>
+                    <p>
+                        <strong>PHP:</strong> Escolhi PHP como linguagem de programação backend para desenvolver 
+                        a lógica do servidor, gerenciar autenticação de usuários, processar requisições, 
+                        realizar operações no banco de dados e implementar todas as funcionalidades da 
+                        aplicação. O PHP é amplamente usado em desenvolvimento web e oferece excelente 
+                        integração com MySQL.
+                    </p>
+                    <p>
+                        <strong>HTML5:</strong> Utilizei HTML5 semântico para estruturar o conteúdo da rede social, 
+                        garantindo uma base sólida e acessível. A estrutura foi pensada para ser clara, 
+                        organizada e fácil de manter, seguindo as melhores práticas de desenvolvimento web.
+                    </p>
+                    <p>
+                        <strong>JavaScript:</strong> Implementei JavaScript para adicionar interatividade à plataforma, 
+                        incluindo funcionalidades como atualização de conteúdo dinâmico, validação de formulários 
+                        no lado do cliente, manipulação do DOM e criação de uma experiência de usuário mais fluida e responsiva.
+                    </p>
+                    <p>
+                        <strong>CSS3:</strong> Com CSS3, criei todos os estilos visuais da rede social, incluindo 
+                        layouts responsivos, animações suaves, gradientes, efeitos de transição e um design moderno 
+                        que torna a experiência do usuário agradável e profissional.
+                    </p>
+                </div>
+
+                <div class="project-links">
+                    <a href="http://sportforyou.gamer.gd/" target="_blank" rel="noopener" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Ver Projeto Online
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
