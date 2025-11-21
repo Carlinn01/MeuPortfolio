@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://carlosoliveira.vercel.app/sitemap.xml
+
+# Não indexar páginas antigas/desatualizadas
+Disallow: /projeto-timeline.html
+
+# Permitir todas as imagens
+Allow: /img/
+
+# Permitir CSS e JS
+Allow: /style.css
+Allow: /script.js
+

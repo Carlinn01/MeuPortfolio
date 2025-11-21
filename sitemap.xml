@@ -5,35 +5,42 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Página Principal -->
   <url>
     <loc>https://carlosoliveira.vercel.app/</loc>
-    <lastmod>2025-10-04T23:35:02+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
+  <!-- Páginas de Projetos -->
   <url>
-    <loc>https://carlosoliveira.vercel.app/#inicio</loc>
+    <loc>https://carlosoliveira.vercel.app/projeto-sportforyou.html</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://carlosoliveira.vercel.app/#especialidades</loc>
-    <priority>0.80</priority>
+    <loc>https://carlosoliveira.vercel.app/projeto-encomendas.html</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://carlosoliveira.vercel.app/#sobre</loc>
-    <priority>0.80</priority>
+    <loc>https://carlosoliveira.vercel.app/projeto-gastrolab.html</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
 
+  <!-- Página de Agradecimento -->
   <url>
-    <loc>https://carlosoliveira.vercel.app/#projetos</loc>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://carlosoliveira.vercel.app/#formulario</loc>
-    <priority>0.70</priority>
+    <loc>https://carlosoliveira.vercel.app/obrigado.html</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
   </url>
 
 </urlset>
