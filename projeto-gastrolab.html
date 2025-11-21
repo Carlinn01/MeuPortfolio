@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GastroLab - Site de Consultoria Gastronômica | Carlos Oliveira</title>
+    <meta name="description" content="Site profissional desenvolvido para apresentar a consultoria gastronômica GastroLab, com foco em facilitar contato e aumentar conversões.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .project-detail-page {
+            padding: 140px 4% 100px 4%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .project-header h1 {
+            color: #fff !important;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .project-header h1 span {
+            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            background-image: url('img/gastrolab.PNG');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 0 auto 60px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-section h2 {
+            color: #fff !important;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project-section h2 i {
+            color: #0b03cd;
+            font-size: 32px;
+        }
+
+        .project-section p {
+            color: #b3b0b0 !important;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .technologies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: #0b03cd;
+            box-shadow: 0 10px 20px rgba(11, 3, 205, 0.3);
+        }
+
+        .tech-item i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #0b03cd;
+        }
+
+        .tech-item h3 {
+            color: #fff !important;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .project-link {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(11, 3, 205, 0.5);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            border-color: #0b03cd;
+            box-shadow: 0 5px 20px rgba(11, 3, 205, 0.3);
+        }
+
+        .purpose-list {
+            list-style-type: disc;
+            color: #b3b0b0 !important;
+            line-height: 2;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        .purpose-list li {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-image {
+                height: 300px;
+            }
+
+            .project-section {
+                padding: 25px;
+            }
+
+            .back-button {
+                top: 80px;
+                left: 10px;
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* Forçar visibilidade mesmo com fade-in */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html#projetos" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Voltar
+    </a>
+
+    <main class="project-detail-page">
+        <div class="interface">
+            <div class="project-header">
+                <h1>GastroLab - Site de Consultoria <span>Gastronômica</span></h1>
+            </div>
+
+            <div class="project-image"></div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-info-circle"></i> Sobre o Projeto</h2>
+                    <p>
+                        Este site foi desenvolvido para criar uma presença digital profissional para a consultoria 
+                        gastronômica GastroLab. O projeto apresenta os serviços da empresa de forma clara, organizada 
+                        e atrativa, fortalecendo a credibilidade através de um layout moderno, fotos, depoimentos e 
+                        diferenciais.
+                    </p>
+                    <p>
+                        O foco principal foi facilitar o contato com potenciais clientes por meio de botões de WhatsApp 
+                        e seção "Entre em Contato", aumentando conversões e oportunidades de negócio. O site guia o usuário 
+                        para solicitar consultoria através de uma navegação simples, rápida e responsiva para qualquer dispositivo.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Propósito do Site</h2>
+                    <p>
+                        Este projeto foi desenvolvido com os seguintes objetivos:
+                    </p>
+                    <ul class="purpose-list">
+                        <li>Criar uma presença digital profissional para a consultoria gastronômica GastroLab</li>
+                        <li>Apresentar os serviços de forma clara, organizada e atrativa</li>
+                        <li>Fortalecer a credibilidade da empresa através de layout moderno, fotos, depoimentos e diferenciais</li>
+                        <li>Facilitar o contato com potenciais clientes por meio de botões de WhatsApp e seção "Entre em Contato"</li>
+                        <li>Aumentar conversões e oportunidades de negócio, guiando o usuário para solicitar consultoria</li>
+                        <li>Mostrar os resultados da empresa através de cases, números e experiência da equipe</li>
+                        <li>Oferecer uma navegação simples, rápida e responsiva para qualquer dispositivo</li>
+                        <li>Transparência e clareza sobre o que a consultoria faz e como ela ajuda seus clientes</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Tecnologias Utilizadas</h2>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Estrutura semântica</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Estilização e design</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Interatividade e funcionalidades</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-wrench"></i> O Que Foi Utilizado</h2>
+                    <p>
+                        <strong>HTML5:</strong> Utilizei HTML5 semântico para estruturar o conteúdo do site de forma 
+                        organizada e acessível. A estrutura foi pensada para ser clara, facilitando a navegação e 
+                        melhorando o SEO do site.
+                    </p>
+                    <p>
+                        <strong>CSS3:</strong> Com CSS3, criei um design moderno e profissional que reflete a identidade 
+                        da marca GastroLab. Implementei layouts responsivos, animações suaves, gradientes e efeitos 
+                        visuais que tornam a experiência do usuário agradável e profissional.
+                    </p>
+                    <p>
+                        <strong>JavaScript:</strong> Implementei JavaScript para adicionar interatividade ao site, 
+                        incluindo funcionalidades como navegação suave, validação de formulários, animações dinâmicas 
+                        e integração com WhatsApp para facilitar o contato com os clientes.
+                    </p>
+                    <p>
+                        O site foi desenvolvido com foco em usabilidade, desempenho e conversão, garantindo que os 
+                        visitantes tenham uma experiência positiva e sejam guiados naturalmente para entrar em contato 
+                        com a consultoria.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-presentation"></i> Apresentação do Projeto</h2>
+                    <p style="font-style: italic; color: #b3b0b0 !important; background: rgba(11, 3, 205, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #0b03cd;">
+                        "Esse site foi desenvolvido para apresentar a consultoria GastroLab de forma profissional, 
+                        mostrando seus serviços, experiência e diferenciais. O foco principal foi facilitar o contato 
+                        com novos clientes, fortalecer a credibilidade da marca e melhorar a conversão para consultoria 
+                        através de uma navegação simples, moderna e responsiva."
+                    </p>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://gastrolabconsult1.websiteseguro.com/" target="_blank" rel="noopener" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        Ver Projeto Online
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
