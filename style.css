@@ -621,9 +621,10 @@ section.portfolio {
 .project-item {
   width: 100%;
   height: 500px;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   cursor: pointer;
   border-radius: 20px;
