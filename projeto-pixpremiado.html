@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pix Premiado - Tio Léo Utilidades | Carlos Oliveira</title>
+    <meta name="description" content="Sistema web para campanhas promocionais tipo Pix Premiado desenvolvido com HTML, CSS, JavaScript (frontend) e PHP + MySQL (backend). Veja o projeto completo desenvolvido por Carlos Oliveira.">
+    <meta name="keywords" content="Pix Premiado, Sistema Web, PHP, MySQL, JavaScript, HTML, CSS, Desenvolvimento Web, Carlos Oliveira, Sistema de Rifa">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Carlos Oliveira">
+    <meta property="og:title" content="Pix Premiado - Tio Léo Utilidades | Carlos Oliveira">
+    <meta property="og:description" content="Sistema web para campanhas promocionais tipo Pix Premiado desenvolvido com HTML, CSS, JavaScript (frontend) e PHP + MySQL (backend).">
+    <meta property="og:image" content="https://carlosoliveira.vercel.app/img/pixpremiado.png">
+    <meta property="og:url" content="https://carlosoliveira.vercel.app/projeto-pixpremiado.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pix Premiado - Tio Léo Utilidades">
+    <meta name="twitter:description" content="Sistema web para campanhas promocionais tipo Pix Premiado desenvolvido com PHP, MySQL, HTML, CSS e JavaScript.">
+    <meta name="twitter:image" content="https://carlosoliveira.vercel.app/img/pixpremiado.png">
+    <link rel="canonical" href="https://carlosoliveira.vercel.app/projeto-pixpremiado.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Pix Premiado - Tio Léo Utilidades",
+      "description": "Sistema web para campanhas promocionais tipo Pix Premiado desenvolvido com HTML, CSS, JavaScript (frontend) e PHP + MySQL (backend)",
+      "url": "https://carlosoliveira.vercel.app/projeto-pixpremiado.html",
+      "author": {
+        "@type": "Person",
+        "name": "Carlos Oliveira"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://carlosoliveira.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfólio",
+            "item": "https://carlosoliveira.vercel.app/#projetos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pix Premiado",
+            "item": "https://carlosoliveira.vercel.app/projeto-pixpremiado.html"
+          }
+        ]
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Pix Premiado",
+        "applicationCategory": "WebApplication",
+        "description": "Sistema web para campanhas promocionais tipo Pix Premiado",
+        "operatingSystem": "Web",
+        "programmingLanguage": ["PHP", "JavaScript", "HTML", "CSS"],
+        "database": "MySQL"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .project-detail-page {
+            padding: 140px 4% 100px 4%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .project-header h1 {
+            color: #fff !important;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .project-header h1 span {
+            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            background-image: url('img/pixpremiado.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 0 auto 60px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .project-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-section h2 {
+            color: #fff !important;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project-section h2 i {
+            color: #0b03cd;
+            font-size: 32px;
+        }
+
+        .project-section p {
+            color: #b3b0b0 !important;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .technologies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: #0b03cd;
+            box-shadow: 0 10px 20px rgba(11, 3, 205, 0.3);
+        }
+
+        .tech-item i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #0b03cd;
+        }
+
+        .tech-item h3 {
+            color: #fff !important;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .project-link {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(11, 3, 205, 0.3);
+        }
+
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(11, 3, 205, 0.5);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            border-color: #0b03cd;
+            box-shadow: 0 5px 20px rgba(11, 3, 205, 0.3);
+        }
+
+        .purpose-list {
+            list-style-type: disc;
+            color: #b3b0b0 !important;
+            line-height: 2;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        .purpose-list li {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-image {
+                height: 300px;
+            }
+
+            .project-section {
+                padding: 25px;
+            }
+
+            .back-button {
+                top: 80px;
+                left: 10px;
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* Forçar visibilidade mesmo com fade-in */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html#projetos" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Voltar
+    </a>
+
+    <main class="project-detail-page">
+        <div class="interface">
+            <div class="project-header">
+                <h1>Pix Premiado - <span>Tio Léo Utilidades</span></h1>
+            </div>
+
+            <div class="project-image"></div>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h2><i class="fas fa-info-circle"></i> Sobre o Projeto</h2>
+                    <p>
+                        O Pix Premiado é um sistema web completo desenvolvido para gerenciar campanhas promocionais 
+                        tipo rifa com 40 números. O sistema foi criado para a Tio Léo Utilidades e permite que os 
+                        clientes reservem números, realizem pagamentos via Pix e acompanhem o status de suas reservas 
+                        em tempo real.
+                    </p>
+                    <p>
+                        O projeto oferece uma interface responsiva e intuitiva tanto para os participantes quanto para 
+                        os administradores, com funcionalidades como reserva temporária de 15 minutos, confirmação 
+                        manual de pagamentos, painel administrativo completo e integração com WhatsApp para envio de 
+                        comprovantes.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-bullseye"></i> Objetivo</h2>
+                    <p>
+                        Este projeto foi desenvolvido com os seguintes objetivos:
+                    </p>
+                    <ul class="purpose-list">
+                        <li>Criar um sistema completo para gerenciar campanhas promocionais tipo Pix Premiado (rifa com 40 números)</li>
+                        <li>Implementar sistema de reserva em 2 etapas: nome/telefone obrigatórios e dados do Pix</li>
+                        <li>Desenvolver reserva temporária de 15 minutos com liberação automática de reservas expiradas</li>
+                        <li>Criar sistema de status para números: Disponível, Reservado, Aguardando Confirmação e Pago</li>
+                        <li>Desenvolver painel administrativo com login por senha para gerenciar pagamentos e números</li>
+                        <li>Implementar atualização em tempo real do grid de números na página inicial</li>
+                        <li>Integrar link para WhatsApp para envio de comprovante após pagamento</li>
+                        <li>Garantir interface responsiva para desktop, tablet e celular</li>
+                        <li>Implementar segurança com validações no backend, prepared statements e proteção contra SQL injection</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-code"></i> Tecnologias Utilizadas</h2>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Estrutura semântica</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Estilização e design responsivo</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Interatividade e atualização em tempo real</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-php"></i>
+                            <h3>PHP</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Backend e API</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <h3>MySQL</h3>
+                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Banco de dados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-wrench"></i> O Que Foi Utilizado</h2>
+                    <p>
+                        <strong>HTML5:</strong> Utilizei HTML5 semântico para estruturar o conteúdo do sistema de forma 
+                        organizada e acessível. A estrutura foi pensada para facilitar a navegação e melhorar a experiência 
+                        do usuário tanto na página inicial quanto no painel administrativo.
+                    </p>
+                    <p>
+                        <strong>CSS3:</strong> Com CSS3, criei um design moderno e responsivo que funciona perfeitamente em 
+                        desktop, tablet e celular. Implementei layouts flexíveis, animações suaves, gradientes e efeitos 
+                        visuais que tornam a experiência do usuário agradável e profissional. O sistema utiliza variáveis 
+                        CSS para personalização de cores.
+                    </p>
+                    <p>
+                        <strong>JavaScript:</strong> Implementei JavaScript para adicionar interatividade ao sistema, 
+                        incluindo funcionalidades como atualização em tempo real do grid de números via AJAX, validação 
+                        de formulários no lado do cliente, manipulação do DOM para exibir modais de reserva e criação de 
+                        uma experiência de usuário fluida e responsiva.
+                    </p>
+                    <p>
+                        <strong>PHP:</strong> Utilizei PHP como linguagem de programação backend para desenvolver a lógica 
+                        do servidor, criar APIs RESTful para comunicação com o frontend, gerenciar sessões de administrador, 
+                        realizar operações no banco de dados e implementar todas as funcionalidades do sistema, incluindo 
+                        validações de segurança e proteção contra SQL injection usando prepared statements.
+                    </p>
+                    <p>
+                        <strong>MySQL:</strong> Escolhi MySQL como sistema de gerenciamento de banco de dados relacional 
+                        para armazenar todas as informações do sistema, incluindo dados dos números (status, nome, telefone, 
+                        datas de reserva e pagamento). O MySQL proporciona uma base sólida e confiável para aplicações web 
+                        que requerem armazenamento estruturado de dados.
+                    </p>
+                    <p>
+                        O sistema foi desenvolvido com foco em segurança, usabilidade e desempenho, garantindo que tanto os 
+                        participantes quanto os administradores tenham uma experiência positiva e eficiente ao utilizar a 
+                        plataforma.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h2><i class="fas fa-presentation"></i> Funcionalidades Principais</h2>
+                    <ul class="purpose-list">
+                        <li><strong>Página Inicial:</strong> Exibição do prêmio, regras e grid de 40 números com atualização em tempo real</li>
+                        <li><strong>Reserva em 2 Etapas:</strong> Nome e telefone obrigatórios na primeira etapa, dados do Pix e botão "Já paguei" na segunda</li>
+                        <li><strong>Reserva Temporária:</strong> 15 minutos de validade com liberação automática de reservas expiradas</li>
+                        <li><strong>Sistema de Status:</strong> Disponível, Reservado, Aguardando Confirmação e Pago</li>
+                        <li><strong>Painel Admin:</strong> Login por senha, confirmar pagamento, liberar número, editar nome/telefone e resetar todos os números</li>
+                        <li><strong>Integração WhatsApp:</strong> Link para envio de comprovante após "Já paguei"</li>
+                        <li><strong>Interface Responsiva:</strong> Funciona perfeitamente em desktop, tablet e celular</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
