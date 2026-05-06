@@ -185,6 +185,16 @@ form .btn-enviar input:hover {
   overflow: hidden;
 }
 
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124,58,237,0.15), transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
 .theme-toggle-btn:hover {
   transform: scale(1.1) rotate(15deg);
   box-shadow: 0 5px 20px var(--shadow-color);

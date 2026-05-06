@@ -1,20 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Sistema de Tema
   const themeToggle = document.getElementById("theme-toggle")
   const themeIcon = themeToggle.querySelector("i")
-  const body = document.body
 
-  // Carrega tema salvo ou define padrão como escuro
   const savedTheme = localStorage.getItem("theme") || "dark"
   setTheme(savedTheme)
 
-  // Alternância de tema
   themeToggle.addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme")
     const newTheme = currentTheme === "light" ? "dark" : "light"
     setTheme(newTheme)
 
-    // Animação do botão
     themeToggle.style.transform = "scale(0.8) rotate(180deg)"
     setTimeout(() => {
       themeToggle.style.transform = "scale(1) rotate(0deg)"
@@ -32,18 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", theme)
   }
 
-  // Scroll suave para links internos
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
       const target = document.querySelector(this.getAttribute("href"))
+
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
           block: "start",
         })
 
-        // Fecha menu mobile se estiver aberto
+        // Fecha menu mobile
         const menuToggle = document.getElementById("menu-toggle")
         if (menuToggle.checked) {
           menuToggle.checked = false
@@ -52,21 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Efeito de scroll no header
   const header = document.querySelector("header")
   let lastScrollY = window.scrollY
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY
 
-    // Adiciona classe scrolled quando rola para baixo
     if (currentScrollY > 50) {
       header.classList.add("scrolled")
     } else {
       header.classList.remove("scrolled")
     }
 
-    // Header hide/show otimizado
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
       header.style.transform = "translateY(-100%)"
     } else {
@@ -76,54 +68,78 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollY = currentScrollY
   })
 
-  // Animações de entrada com Intersection Observer
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible")
+        }
+      })
+    },
+    {
+      threshold: 0.15,
+    }
+  )
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible")
-        observer.unobserve(entry.target)
-      }
-    })
-  }, observerOptions)
-
-  // Observa elementos com animação de entrada
   document.querySelectorAll(".fade-in").forEach((el) => {
     observer.observe(el)
   })
 
-  // Animação escalonada para especialidades
-  const especialidadesBoxes = document.querySelectorAll(".especialidades-box")
-  especialidadesBoxes.forEach((box, index) => {
-    box.style.animationDelay = `${index * 0.2}s`
-  })
-
-  // Efeito parallax sutil no hero
-  const heroSection = document.querySelector(".topo-do-site")
   const heroImage = document.querySelector(".img-topo-site img")
 
   window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset
-    const rate = scrolled * -0.5
+    const scrolled = window.scrollY
 
-    if (heroImage && scrolled < heroSection.offsetHeight) {
-      heroImage.style.transform = `translateY(${rate}px)`
+    if (heroImage) {
+      heroImage.style.transform = `
+        translateY(${scrolled * -0.2}px)
+        scale(1.05)
+      `
     }
   })
 
-  // Melhoria no formulário
-  const form = document.querySelector("form")
-  const inputs = form.querySelectorAll("input, textarea")
+  const glow = document.createElement("div")
+  glow.classList.add("cursor-glow")
+  document.body.appendChild(glow)
+
+  document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px"
+    glow.style.top = e.clientY + "px"
+  })
+
+  const projects = document.querySelectorAll(".project-item")
+
+  projects.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+
+      const centerX = rect.width / 2
+      const centerY = rect.height / 2
+
+      const rotateX = (y - centerY) / 20
+      const rotateY = (centerX - x) / 20
+
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        scale(1.03)
+      `
+    })
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)"
+    })
+  })
+
+  const inputs = document.querySelectorAll("input, textarea")
 
   inputs.forEach((input) => {
-    // Efeito de foco melhorado
     input.addEventListener("focus", function () {
       this.style.transform = "scale(1.02)"
-      this.style.boxShadow = "0 5px 20px rgba(11, 3, 205, 0.3)"
+      this.style.boxShadow = "0 5px 20px rgba(124,58,237,0.3)"
     })
 
     input.addEventListener("blur", function () {
@@ -131,73 +147,46 @@ document.addEventListener("DOMContentLoaded", () => {
       this.style.boxShadow = "none"
     })
 
-    // Validação em tempo real
     input.addEventListener("input", function () {
       if (this.checkValidity()) {
-        this.style.borderColor = "#4c6ef5"
+        this.style.borderColor = "#7c3aed"
       } else {
         this.style.borderColor = "#ef4444"
       }
     })
   })
 
-  // Loading otimizado para imagens
-  const images = document.querySelectorAll("img")
-  images.forEach((img) => {
+  document.querySelectorAll("img").forEach((img) => {
+    img.style.opacity = "0"
+    img.style.transform = "scale(0.95)"
+
     img.addEventListener("load", function () {
       this.style.opacity = "1"
       this.style.transform = "scale(1)"
     })
 
-    // Fallback se a imagem já estiver carregada
     if (img.complete) {
       img.style.opacity = "1"
       img.style.transform = "scale(1)"
     }
   })
 
-  // Otimização de performance - debounce para scroll
-  function debounce(func, wait) {
+  function debounce(fn, delay) {
     let timeout
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout)
-        func(...args)
-      }
+    return (...args) => {
       clearTimeout(timeout)
-      timeout = setTimeout(later, wait)
+      timeout = setTimeout(() => fn(...args), delay)
     }
   }
 
-
-  // Preload de hover states para melhor performance
-  const hoverElements = document.querySelectorAll(".especialidades-box, .img-portfolio, .btn-social button")
-  hoverElements.forEach((el) => {
-    el.addEventListener("mouseenter", function () {
-      this.style.willChange = "transform, box-shadow"
+  document
+    .querySelectorAll(".especialidades-box, .project-item, .btn-social button")
+    .forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        el.style.willChange = "transform"
+      })
+      el.addEventListener("mouseleave", () => {
+        el.style.willChange = "auto"
+      })
     })
-
-    el.addEventListener("mouseleave", function () {
-      this.style.willChange = "auto"
-    })
-  })
-
-
-  const style = document.createElement("style")
-  style.textContent = `
-        @keyframes rainbow {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-        
-        img {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.5s ease;
-        }
-    `
-  document.head.appendChild(style)
-
 })
-
-
