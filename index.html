@@ -1,339 +1,434 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Oliveira — Desenvolvedor Full Stack</title>
+  <meta name="description" content="Carlos Oliveira, desenvolvedor Full Stack especializado em criar sistemas e experiências digitais que fazem diferença. HTML, CSS, JavaScript, PHP, Java e MySQL.">
+  <meta name="keywords" content="Desenvolvedor Full Stack, Programador Web, Carlos Oliveira, PHP, Java, JavaScript, HTML, CSS, MySQL, Freelancer">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Oliveira">
+  <meta name="language" content="Portuguese">
+  <meta name="geo.region" content="BR-SC">
+  <meta name="geo.placename" content="Ibiam, SC">
+  <meta name="google-site-verification" content="BkdmsU5Rgkxj6nlt0ZsmWImmA_8y3apBxKU5TJjkqOI">
 
-    <title>Carlos Oliveira | Desenvolvedor Full Stack em Web, Java e PHP</title>
-    <meta name="description" content="Sou Carlos Oliveira, desenvolvedor Full Stack especializado em criar sites e sistemas modernos com HTML, CSS, PHP, Java e JavaScript. Transformo ideias em experiências digitais incríveis.">
-    <meta name="keywords" content="Desenvolvedor Full Stack, Programador Web, Criação de Sites, Java, PHP, HTML, CSS, JavaScript, Portfólio, Carlos Oliveira, Freelancer, Web Developer Brasil">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Carlos Oliveira | Desenvolvedor Full Stack">
-    <meta property="og:description" content="Desenvolvedor Full Stack com foco em soluções web modernas e eficientes. Veja meu portfólio e entre em contato!">
-    <meta property="og:image" content="https://carlosoliveira.vercel.app/img/MinhaFoto.png">
-    <meta property="og:url" content="https://carlosoliveira.vercel.app">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Carlos Oliveira | Desenvolvedor Full Stack">
-    <meta name="twitter:description" content="Desenvolvedor Full Stack com foco em soluções web modernas e eficientes. Veja meu portfólio e entre em contato!">
-    <meta name="twitter:image" content="https://carlosoliveira.vercel.app/img/MinhaFoto.png">
-    <link rel="canonical" href="https://carlosoliveira.vercel.app/">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="google-site-verification" content="BkdmsU5Rgkxj6nlt0ZsmWImmA_8y3apBxKU5TJjkqOI" />
-    <meta name="author" content="Carlos Oliveira">
-    <meta name="language" content="Portuguese">
-    <meta name="geo.region" content="BR-SC">
-    <meta name="geo.placename" content="Ibiam, SC">
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Carlos Oliveira",
-      "jobTitle": "Desenvolvedor Full Stack",
-      "description": "Desenvolvedor Full Stack especializado em criar sites e sistemas modernos com HTML, CSS, PHP, Java e JavaScript",
-      "url": "https://carlosoliveira.vercel.app",
-      "image": "https://carlosoliveira.vercel.app/img/MinhaFoto.png",
-      "sameAs": [
-        "https://www.instagram.com/_carlos.oliveiraa",
-        "https://github.com/Carlinn01",
-        "https://www.linkedin.com/in/carlos-oliveira-580186331"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ibiam",
-        "addressRegion": "SC",
-        "addressCountry": "BR"
-      },
-      "email": "carloseduardodalazenoliveira@gmail.com",
-      "telephone": "+55 (49) 99952-9673",
-      "knowsAbout": ["HTML", "CSS", "JavaScript", "PHP", "Java", "MySQL", "Desenvolvimento Web", "Full Stack Development"],
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Desenvolvedor Full Stack",
-        "occupationLocation": {
-          "@type": "Country",
-          "name": "Brasil"
-        }
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Carlos Oliveira - Desenvolvedor Full Stack",
-      "url": "https://carlosoliveira.vercel.app",
-      "description": "Portfólio profissional de Carlos Oliveira, Desenvolvedor Full Stack especializado em Web, Java e PHP",
-      "author": {
-        "@type": "Person",
-        "name": "Carlos Oliveira"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://carlosoliveira.vercel.app/#projetos",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Carlos Oliveira — Desenvolvedor Full Stack">
+  <meta property="og:description" content="Desenvolvedor Full Stack criando sistemas e experiências digitais únicas.">
+  <meta property="og:image" content="https://carlosoliveira.vercel.app/img/MinhaFoto.png">
+  <meta property="og:url" content="https://carlosoliveira.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carlos Oliveira — Desenvolvedor Full Stack">
+  <meta name="twitter:description" content="Desenvolvedor Full Stack criando sistemas e experiências digitais únicas.">
+  <meta name="twitter:image" content="https://carlosoliveira.vercel.app/img/MinhaFoto.png">
+
+  <link rel="canonical" href="https://carlosoliveira.vercel.app/">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Carlos Oliveira",
+    "jobTitle": "Desenvolvedor Full Stack",
+    "description": "Desenvolvedor Full Stack especializado em criar sistemas e experiências digitais com HTML, CSS, JavaScript, PHP, Java e MySQL",
+    "url": "https://carlosoliveira.vercel.app",
+    "image": "https://carlosoliveira.vercel.app/img/MinhaFoto.png",
+    "sameAs": [
+      "https://www.instagram.com/_carlos.oliveiraa",
+      "https://github.com/Carlinn01",
+      "https://www.linkedin.com/in/carlos-oliveira-580186331"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ibiam",
+      "addressRegion": "SC",
+      "addressCountry": "BR"
+    },
+    "email": "carloseduardodalazenoliveira@gmail.com",
+    "telephone": "+55 (49) 99952-9673",
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "PHP", "Java", "MySQL", "Full Stack Development"]
+  }
+  </script>
 </head>
 
 <body>
-    <header>
-        <div class="interface">
-            <a href="#" aria-label="Logo Carlos Oliveira">
-                <p class="logo">Carlos <br> Oliveira</p>
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="nav" id="nav">
+    <div class="nav__wrap">
+      <a href="#inicio" class="nav__logo">Carlos<span class="lime">.</span></a>
+
+      <nav class="nav__links" aria-label="Navegação principal">
+        <a href="#sobre" class="nav__link">Sobre</a>
+        <a href="#especialidades" class="nav__link">Skills</a>
+        <a href="#projetos" class="nav__link">Projetos</a>
+        <a href="#formulario" class="nav__link">Contato</a>
+      </nav>
+
+      <a href="#formulario" class="btn btn-outline nav__cta" data-mag>Contrate&#8209;me</a>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mob-menu" id="mobMenu" aria-hidden="true">
+    <nav>
+      <a href="#sobre" class="mob-link">Sobre</a>
+      <a href="#especialidades" class="mob-link">Skills</a>
+      <a href="#projetos" class="mob-link">Projetos</a>
+      <a href="#formulario" class="mob-link">Contato</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section id="inicio" class="hero">
+      <div class="hero__wrap">
+        <div class="hero__available">
+          <span class="hero__dot"></span>
+          Disponível para novos projetos
+        </div>
+
+        <h1 class="hero__title">
+          <span class="hero__line">Sites e sistemas</span>
+          <span class="hero__line">que funcionam</span>
+          <span class="hero__line lime">de verdade.</span>
+        </h1>
+
+        <div class="hero__foot">
+          <div class="hero__meta">
+            <p class="hero__desc">
+              Desenvolvo soluções digitais completas — do design visual<br>
+              ao banco de dados — para negócios que querem <strong>resultado real.</strong>
+            </p>
+            <div class="hero__btns">
+              <a href="#projetos" class="btn btn-lime" data-mag>
+                Ver projetos <span class="arr">↗</span>
+              </a>
+              <a href="#formulario" class="hero__scroll">
+                Falar sobre meu projeto
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__photo" aria-hidden="true">
+            <img src="img/MinhaFoto.png" alt="Carlos Oliveira" loading="eager" width="200" height="200">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MARQUEE ==================== -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee__track">
+          <span>HTML5</span><i>·</i>
+          <span>CSS3</span><i>·</i>
+          <span>JavaScript</span><i>·</i>
+          <span>PHP</span><i>·</i>
+          <span>Java</span><i>·</i>
+          <span>MySQL</span><i>·</i>
+          <span>HTML5</span><i>·</i>
+          <span>CSS3</span><i>·</i>
+          <span>JavaScript</span><i>·</i>
+          <span>PHP</span><i>·</i>
+          <span>Java</span><i>·</i>
+          <span>MySQL</span><i>·</i>
+          <span>HTML5</span><i>·</i>
+          <span>CSS3</span><i>·</i>
+          <span>JavaScript</span><i>·</i>
+          <span>PHP</span><i>·</i>
+          <span>Java</span><i>·</i>
+          <span>MySQL</span><i>·</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SOBRE ==================== -->
+    <section id="sobre" class="section about">
+      <div class="section__head reveal">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">Sobre mim</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__left reveal">
+          <div class="about__img-wrap">
+            <img src="img/MinhaFoto.png" alt="Carlos Oliveira — Desenvolvedor Full Stack" loading="lazy">
+            <div class="about__img-accent"></div>
+          </div>
+          <div class="about__stats">
+            <div class="stat">
+              <strong class="stat__n counter" data-to="4">0</strong>
+              <span class="stat__l">Projetos</span>
+            </div>
+            <div class="stat">
+              <strong class="stat__n counter" data-to="18">0</strong>
+              <span class="stat__l">Anos</span>
+            </div>
+            <div class="stat">
+              <strong class="stat__n">6</strong>
+              <span class="stat__l">Tecnologias</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__right reveal">
+          <p class="about__lead">
+            Olá! Sou o Carlos — desenvolvedor Full Stack que transforma necessidades reais em código que funciona, sem enrolação.
+          </p>
+          <p class="about__body">
+            Com base técnica construída no técnico integrado em Informática e aprofundada no curso de Ciências da Computação na UNOESC, entrego projetos com código limpo, organizado e fácil de manter.
+          </p>
+          <p class="about__body">
+            Cada projeto recebe atenção total — da primeira conversa ao deploy. Não entrego só código: entrego uma solução que resolve o seu problema real e vai além do esperado.
+          </p>
+
+          <div class="about__social">
+            <a href="https://www.instagram.com/_carlos.oliveiraa" target="_blank" rel="noopener noreferrer" class="soc-link" data-mag>
+              Instagram
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
-
-            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" aria-label="Abrir menu">
-            <label for="menu-toggle" class="menu-toggle-btn">
-                <span></span><span></span><span></span>
-            </label>
-
-            <nav class="Menu-Desktop" aria-label="Navegação principal">
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#especialidades">Especialidades</a></li>
-                    <li><a href="#sobre">Sobre mim</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#formulario">Contato</a></li>
-                </ul>
-            </nav>
-
-            <div class="theme-controls">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-
-            <div class="btn-contrate">
-                <a href="#formulario">
-                    <button>Contrate-me</button>
-                </a>
-            </div>
+            <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer" class="soc-link" data-mag>
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener noreferrer" class="soc-link" data-mag>
+              LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main>
-        <!-- INÍCIO -->
-        <section id="inicio" class="topo-do-site fade-in">
-            <div class="interface">
-                <div class="flex">
-                    <div class="txt-topo-site">
-                       <h1>Eu crio sistemas e sites que <span>realmente dão resultado</span>.</h1>
+    <!-- ==================== SKILLS ==================== -->
+    <section id="especialidades" class="section skills">
+      <div class="section__head reveal">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">Especialidades</h2>
+      </div>
 
-<p>
-Desenvolvedor Full Stack focado em performance, automação e soluções reais.
-Menos código inútil, mais resultado.
-</p>
-                        <div class="btn-contato">
-                            <a href="#formulario">
-                                <button>Entre em contato</button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="img-topo-site">
-                        <img src="img/MinhaFoto.png" alt="Foto de Carlos Oliveira, desenvolvedor full stack">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESPECIALIDADES -->
-        <section id="especialidades" class="especialidades fade-in">
-            <div class="interface">
-                <h2 class="titulo">Minhas <span>Especialidades</span></h2>
-                <div class="flex">
-                    <div class="especialidades-box">
-                        <i class="fab fa-html5" style="color: #e34c26;"></i>
-                        <h3>HTML5</h3>
-                        <p>Estruturação semântica e acessível de páginas web com as melhores práticas do HTML5.</p>
-                    </div>
-                    <div class="especialidades-box">
-                        <i class="fab fa-css3-alt" style="color: #1572b6;"></i>
-                        <h3>CSS3</h3>
-                        <p>Estilização avançada, animações, responsividade e uso de frameworks modernos.</p>
-                    </div>
-                    <div class="especialidades-box">
-                        <i class="fab fa-java" style="color: #ed8b00;"></i>
-                        <h3>Java</h3>
-                        <p>Desenvolvimento de aplicações robustas com Java e Spring Framework.</p>
-                    </div>
-                    <div class="especialidades-box">
-                        <i class="fab fa-php" style="color: #777bb4;"></i>
-                        <h3>PHP</h3>
-                        <p>Desenvolvimento backend com PHP, APIs e integração com bancos de dados.</p>
-                    </div>
-                    <div class="especialidades-box">
-                        <i class="fas fa-database" style="color: #00758f;"></i>
-                        <h3>MySQL</h3>
-                        <p>Gerenciamento de bancos de dados relacionais, consultas SQL e otimização de performance.</p>
-                    </div>
-                    <div class="especialidades-box">
-                        <i class="fab fa-js" style="color: #f7df1e;"></i>
-                        <h3>JavaScript</h3>
-                        <p>Desenvolvimento de interfaces interativas, manipulação do DOM e criação de experiências dinâmicas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOBRE -->
-        <section id="sobre" class="sobre fade-in">
-            <div class="interface">
-                <div class="flex">
-                    <div class="img-sobre">
-                        <img src="img/MinhaFoto.png" alt="Carlos Oliveira programando no computador">
-                    </div>
-                    <div class="txt-sobre">
-                        <h2>Muito prazer, <span>sou Carlos Oliveira</span></h2>
-                        <p>Desenvolvedor Full Stack com mais de 3 anos de experiência criando soluções digitais inovadoras. Especializado em HTML, CSS, JavaScript, PHP e Java.</p>
-                        <p>Transformo ideias complexas em interfaces simples e funcionais, sempre focando na experiência do usuário e na qualidade do código.</p>
-                        <div class="btn-social">
-                            <a href="https://www.instagram.com/_carlos.oliveiraa" target="_blank" rel="noopener"><button><i class="fab fa-instagram"></i></button></a>
-                            <a href="https://github.com/Carlinn01" target="_blank" rel="noopener"><button><i class="fab fa-github"></i></button></a>
-                            <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener"><button><i class="fab fa-linkedin"></i></button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFÓLIO -->
-        <section id="projetos" class="portfolio fade-in">
-            <div class="interface">
-                <h2 class="titulo">Meu <span>Portfólio</span></h2>
-                <div class="portfolio-container">
-                    <div class="project-item" style="background-image: url('img/sportforyou.png');">
-                        <div class="project-overlay">
-                            <h3 class="project-title">SportForYou - Rede Social Esportiva</h3>
-                            <div class="btn-mais">
-                                <a href="projeto-sportforyou.html"><button>Saiba Mais</button></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-item" style="background-image: url('img/encomendas2.png');">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Sistema de Gerenciamento de Encomendas</h3>
-                            <div class="btn-mais">
-                                <a href="projeto-encomendas.html"><button>Saiba Mais</button></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-item" style="background-image: url('img/gastrolab.PNG');">
-                        <div class="project-overlay">
-                            <h3 class="project-title">GastroLab - Site de Consultoria Gastronômica</h3>
-                            <div class="btn-mais">
-                                <a href="projeto-gastrolab.html"><button>Saiba Mais</button></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-item" style="background-image: url('img/pixpremiado.png');">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Pix Premiado - Tio Léo Utilidades</h3>
-                            <div class="btn-mais">
-                                <a href="projeto-pixpremiado.html"><button>Saiba Mais</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-github-link">
-                    <a href="https://github.com/Carlinn01" target="_blank" rel="noopener" class="btn-github">
-                        <i class="fab fa-github"></i>
-                        Ver Mais
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FORMULÁRIO -->
-        <section id="formulario" class="formulario fade-in">
-            <div class="interface">
-                <h2 class="titulo">Entre em <span>Contato!</span></h2>
-                <form action="https://formsubmit.co/carloseduardodalazenoliveira@gmail.com" method="POST">
-                    <input type="text" name="nome" placeholder="Seu Nome:" required>
-                    <input type="email" name="email" placeholder="Seu Email:" required>
-                    <input type="hidden" name="_captcha" value="false"> 
-                    <input type="text" name="telefone" placeholder="Seu Telefone:">
-                    <textarea name="mensagem" placeholder="Sua Mensagem:" required></textarea>
-                    <input type="hidden" name="_next" value="https://carlosoliveira.vercel.app/obrigado.html">
-                    <div class="btn-enviar">
-                        <input type="submit" value="ENVIAR">
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="fade-in">
-        <div class="interface">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo-footer">
-                        <p class="logo">Carlos <br> Oliveira</p>
-                        <p class="footer-description">Desenvolvedor Full Stack especializado em criar soluções digitais inovadoras e experiências web excepcionais.</p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#especialidades">Especialidades</a></li>
-                        <li><a href="#sobre">Sobre Mim</a></li>
-                        <li><a href="#projetos">Projetos</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Especialidades</h3>
-                    <ul class="footer-links">
-                        <li><a href="#especialidades">HTML</a></li>
-                        <li><a href="#especialidades">Css</a></li>
-                        <li><a href="#especialidades">PHP</a></li>
-                        <li><a href="#especialidades">Java</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contato</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:carloseduardodalazenoliveira@gmail.com">carloseduardodalazenoliveira@gmail.com</a></p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:+5511999999999">+55 (49) 99952-9673</a></p>
-                        <p><i class="fas fa-map-marker-alt"></i> Ibiam, Sc - Brasil</p>
-                    </div>
-                    <div class="btn-social">
-                        <a href="https://www.instagram.com/_carlos.oliveiraa" target="_blank" aria-label="Instagram"><button><i class="fab fa-instagram"></i></button></a>
-                        <a href="https://github.com/Carlinn01" target="_blank" aria-label="GitHub"><button><i class="fab fa-github"></i></button></a>
-                        <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" aria-label="LinkedIn"><button><i class="fab fa-linkedin"></i></button></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Carlos Oliveira. Todos os direitos reservados.</p>
-                    <p>Desenvolvido por Carlos Oliveira</p>
-                </div>
-            </div>
+      <div class="skills__grid reveal">
+        <div class="skill-card">
+          <div class="skill-card__tag">HTML5</div>
+          <p class="skill-card__desc">Estrutura semântica, acessível e otimizada para SEO</p>
+          <span class="skill-card__badge">Desenvolvimento Web</span>
         </div>
-    </footer>
+        <div class="skill-card">
+          <div class="skill-card__tag">CSS3</div>
+          <p class="skill-card__desc">Layouts modernos, animações e design responsivo pixel-perfect</p>
+          <span class="skill-card__badge">Desenvolvimento Web</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">JavaScript</div>
+          <p class="skill-card__desc">Interatividade, integração de APIs e lógica no cliente</p>
+          <span class="skill-card__badge">Desenvolvimento Web</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">PHP</div>
+          <p class="skill-card__desc">Backend seguro com autenticação, rotas e APIs REST</p>
+          <span class="skill-card__badge">Backend</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">Java</div>
+          <p class="skill-card__desc">Lógica robusta e orientada a objetos para sistemas complexos</p>
+          <span class="skill-card__badge">Backend</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">C</div>
+          <p class="skill-card__desc">Programação estruturada, controle de memória e algoritmos</p>
+          <span class="skill-card__badge">Linguagem Base</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">MySQL</div>
+          <p class="skill-card__desc">Modelagem relacional, queries otimizadas e integridade de dados</p>
+          <span class="skill-card__badge">Banco de Dados</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">Git &amp; GitHub</div>
+          <p class="skill-card__desc">Versionamento, colaboração e deploy de projetos profissionais</p>
+          <span class="skill-card__badge">Ferramentas</span>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__tag">Figma</div>
+          <p class="skill-card__desc">Prototipação e conversão fiel de designs em código funcional</p>
+          <span class="skill-card__badge">Design & UI</span>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- ==================== PROJETOS ==================== -->
+    <section id="projetos" class="section projects">
+      <div class="section__head reveal">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">Projetos</h2>
+      </div>
+
+      <div class="proj-grid">
+        <article class="proj-item reveal">
+          <a href="projeto-sportforyou.html" class="proj-item__link">
+            <figure class="proj-item__img">
+              <img src="img/sportforyou.png" alt="SportForYou" loading="lazy">
+            </figure>
+            <div class="proj-item__info">
+              <span class="proj-item__num">01</span>
+              <h3 class="proj-item__title">SportForYou</h3>
+              <p class="proj-item__desc">Rede social full stack com auth, feed e perfis</p>
+              <span class="proj-item__cta">Ver projeto ↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="proj-item reveal">
+          <a href="projeto-encomendas.html" class="proj-item__link">
+            <figure class="proj-item__img">
+              <img src="img/encomendas.png" alt="Sistema de Encomendas" loading="lazy">
+            </figure>
+            <div class="proj-item__info">
+              <span class="proj-item__num">02</span>
+              <h3 class="proj-item__title">Sistema de Encomendas</h3>
+              <p class="proj-item__desc">Desktop app para gestão de pedidos em loja real</p>
+              <span class="proj-item__cta">Ver projeto ↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="proj-item reveal">
+          <a href="projeto-gastrolab.html" class="proj-item__link">
+            <figure class="proj-item__img">
+              <img src="img/gastrolab.PNG" alt="GastroLab" loading="lazy">
+            </figure>
+            <div class="proj-item__info">
+              <span class="proj-item__num">03</span>
+              <h3 class="proj-item__title">GastroLab</h3>
+              <p class="proj-item__desc">Site institucional focado em conversão de clientes</p>
+              <span class="proj-item__cta">Ver projeto ↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="proj-item reveal">
+          <a href="projeto-pixpremiado.html" class="proj-item__link">
+            <figure class="proj-item__img">
+              <img src="img/pixpremiado.png" alt="Pix Premiado" loading="lazy">
+            </figure>
+            <div class="proj-item__info">
+              <span class="proj-item__num">04</span>
+              <h3 class="proj-item__title">Pix Premiado</h3>
+              <p class="proj-item__desc">Sistema de rifas com painel admin e Pix integrado</p>
+              <span class="proj-item__cta">Ver projeto ↗</span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="proj-more reveal">
+        <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-mag>
+          Ver mais no GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== CONTATO ==================== -->
+    <section id="formulario" class="section contact">
+      <div class="section__head reveal">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Contato</h2>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__left reveal">
+          <p class="contact__big">Seu projeto<br>começa<br><span class="lime">aqui.</span></p>
+          <p class="contact__sub">
+            Tem uma ideia? Precisa de um site ou sistema? Me conta o que você precisa — sem compromisso. Analiso seu projeto e respondo com clareza em até <strong>24 horas.</strong>
+          </p>
+          <a href="mailto:carloseduardodalazenoliveira@gmail.com" class="contact__email">
+            carloseduardodalazenoliveira@gmail.com
+          </a>
+        </div>
+
+        <form class="contact__form reveal"
+              action="https://formsubmit.co/carloseduardodalazenoliveira@gmail.com"
+              method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="obrigado.html">
+          <input type="hidden" name="_subject" value="Novo contato do portfólio!">
+
+          <div class="field">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Como posso te chamar?" required autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="telefone">WhatsApp (opcional)</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="mensagem">Sobre o seu projeto</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva o que você precisa — quanto mais detalhes, melhor a proposta." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-lime btn-full" data-mag>
+            Enviar mensagem <span class="arr">↗</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer__wrap">
+      <p class="footer__logo">Carlos<span class="lime">.</span></p>
+      <p class="footer__copy">© 2025 Carlos Oliveira — Feito com dedicação.</p>
+      <div class="footer__links">
+        <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
