@@ -1,395 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gerenciamento de Encomendas | Carlos Oliveira</title>
-    <meta name="description" content="Sistema de gerenciamento de encomendas desenvolvido para loja Tio Léo Utilidades usando Java, SQLite e Swing. Veja o projeto completo desenvolvido por Carlos Oliveira.">
-    <meta name="keywords" content="Sistema de Encomendas, Java, SQLite, Swing, Desenvolvimento Desktop, Carlos Oliveira, Aplicação Java">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Carlos Oliveira">
-    <meta property="og:title" content="Sistema de Gerenciamento de Encomendas | Carlos Oliveira">
-    <meta property="og:description" content="Sistema de gerenciamento de encomendas desenvolvido para loja Tio Léo Utilidades usando Java, SQLite e Swing.">
-    <meta property="og:image" content="https://carlosoliveira.vercel.app/img/encomendas2.png">
-    <meta property="og:url" content="https://carlosoliveira.vercel.app/projeto-encomendas.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sistema de Gerenciamento de Encomendas">
-    <meta name="twitter:description" content="Sistema desenvolvido para loja Tio Léo Utilidades usando Java, SQLite e Swing.">
-    <meta name="twitter:image" content="https://carlosoliveira.vercel.app/img/encomendas2.png">
-    <link rel="canonical" href="https://carlosoliveira.vercel.app/projeto-encomendas.html">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Sistema de Gerenciamento de Encomendas",
-      "description": "Sistema de gerenciamento de encomendas desenvolvido para loja Tio Léo Utilidades usando Java, SQLite e Swing",
-      "url": "https://carlosoliveira.vercel.app/projeto-encomendas.html",
-      "author": {
-        "@type": "Person",
-        "name": "Carlos Oliveira"
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Início",
-            "item": "https://carlosoliveira.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Portfólio",
-            "item": "https://carlosoliveira.vercel.app/#projetos"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Sistema de Encomendas",
-            "item": "https://carlosoliveira.vercel.app/projeto-encomendas.html"
-          }
-        ]
-      },
-      "about": {
-        "@type": "SoftwareApplication",
-        "name": "Sistema de Gerenciamento de Encomendas",
-        "applicationCategory": "DesktopApplication",
-        "description": "Sistema para gerenciamento de encomendas de loja",
-        "operatingSystem": "Windows, Linux, macOS",
-        "programmingLanguage": "Java",
-        "database": "SQLite"
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Encomendas — Carlos Oliveira</title>
+  <meta name="description" content="Sistema de gerenciamento de encomendas desenvolvido para loja Tio Léo Utilidades usando Java, SQLite e Swing. Projeto de Carlos Oliveira.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Oliveira">
+  <meta property="og:title" content="Sistema de Encomendas | Carlos Oliveira">
+  <meta property="og:image" content="https://carlosoliveira.vercel.app/img/encomendas2.png">
+  <meta property="og:url" content="https://carlosoliveira.vercel.app/projeto-encomendas.html">
+  <link rel="canonical" href="https://carlosoliveira.vercel.app/projeto-encomendas.html">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pd-topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      z-index: 200;
+      background: rgba(12,12,12,.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid #1E1E1E;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
     }
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            color: #fff;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
-        }
-
-        .project-detail-page {
-            padding: 140px 4% 100px 4%;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-        }
-
-        .project-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .project-header h1 {
-            color: #fff !important;
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .project-header h1 span {
-            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .project-image {
-            width: 100%;
-            max-width: 1200px;
-            height: 600px;
-            background-image: url('img/encomendas2.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            margin: 0 auto 60px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
-        }
-
-        .project-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .project-section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .project-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(11, 3, 205, 0.3);
-        }
-
-        /* Forçar visibilidade mesmo com fade-in */
-        .fade-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        .project-section h2 {
-            color: #fff !important;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .project-section h2 i {
-            color: #0b03cd;
-            font-size: 32px;
-        }
-
-        .project-section p {
-            color: #b3b0b0 !important;
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .technologies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .tech-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .tech-item:hover {
-            transform: translateY(-5px);
-            border-color: #0b03cd;
-            box-shadow: 0 10px 20px var(--shadow-color);
-        }
-
-        .tech-item i {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #0b03cd;
-        }
-
-        .tech-item h3 {
-            color: #fff !important;
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            transition: color 0.3s ease;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .project-link {
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: 600;
-            background: linear-gradient(45deg, #0b03cd, #4c6ef5);
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 30px rgba(11, 3, 205, 0.3);
-        }
-
-        .project-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(11, 3, 205, 0.5);
-        }
-
-        .back-button {
-            position: fixed;
-            top: 100px;
-            left: 20px;
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            color: #fff !important;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .back-button:hover {
-            transform: translateX(-5px);
-            border-color: #0b03cd;
-            box-shadow: 0 5px 20px var(--shadow-color);
-        }
-
-        @media screen and (max-width: 768px) {
-            .project-header h1 {
-                font-size: 32px;
-            }
-
-            .project-image {
-                height: 300px;
-            }
-
-            .project-section {
-                padding: 25px;
-            }
-
-            .back-button {
-                top: 80px;
-                left: 10px;
-                padding: 10px 15px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    .pd-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      font-weight: 500;
+      color: #666;
+      transition: color .2s;
+    }
+    .pd-back:hover { color: #C8FF00; }
+    .pd-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: auto;
+      color: #F0F0F0;
+    }
+    .pd-page {
+      padding: 100px 2rem 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pd-breadcrumb {
+      font-size: .75rem;
+      color: #666;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .pd-breadcrumb a { color: #666; transition: color .2s; }
+    .pd-breadcrumb a:hover { color: #C8FF00; }
+    .pd-breadcrumb span { color: #333; }
+    .pd-header { margin-bottom: 3.5rem; }
+    .pd-num {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #C8FF00;
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .pd-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+    .pd-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .pd-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: .3rem .75rem;
+      background: #141414;
+      border: 1px solid #2A2A2A;
+      border-radius: 100px;
+      font-size: .72rem;
+      font-weight: 500;
+      color: #666;
+      letter-spacing: .05em;
+    }
+    .pd-tag.lime { border-color: rgba(200,255,0,.3); color: #C8FF00; }
+    .pd-img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid #1E1E1E;
+      margin-bottom: 3.5rem;
+      overflow: hidden;
+      background: #141414;
+    }
+    .pd-img img { width: 100%; height: auto; display: block; object-fit: contain; }
+    .pd-section {
+      background: #141414;
+      border: 1px solid #1E1E1E;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .pd-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .pd-section h2::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #C8FF00;
+      flex-shrink: 0;
+    }
+    .pd-section p { font-size: .92rem; color: #666; line-height: 1.85; margin-bottom: 1rem; }
+    .pd-section p:last-child { margin-bottom: 0; }
+    .pd-section p strong { color: #F0F0F0; font-weight: 500; }
+    .pd-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .pd-list li {
+      font-size: .92rem;
+      color: #666;
+      line-height: 1.7;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .pd-list li::before { content: '↗'; position: absolute; left: 0; color: #C8FF00; font-size: .75rem; }
+    .pd-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+      margin-top: .5rem;
+    }
+    .pd-tech {
+      background: #0C0C0C;
+      border: 1px solid #2A2A2A;
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: border-color .2s, background .2s;
+    }
+    .pd-tech:hover { border-color: rgba(200,255,0,.4); background: #141414; }
+    .pd-tech strong { display: block; font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 700; color: #F0F0F0; margin-bottom: .2rem; }
+    .pd-tech span { font-size: .72rem; color: #666; }
+    .pd-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+    .pd-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      transition: all .3s;
+      cursor: pointer;
+      border: none;
+    }
+    .pd-btn-lime { background: #C8FF00; color: #0C0C0C; }
+    .pd-btn-lime:hover { background: #d4ff1a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,255,0,.18); }
+    .pd-btn-outline { background: transparent; color: #F0F0F0; border: 1px solid #2A2A2A; }
+    .pd-btn-outline:hover { border-color: #C8FF00; color: #C8FF00; transform: translateY(-2px); }
+    @media (max-width: 600px) {
+      .pd-page { padding: 80px 1.1rem 60px; }
+      .pd-section { padding: 1.75rem; }
+    }
+  </style>
 </head>
-
 <body>
-    <a href="index.html#projetos" class="back-button">
-        <i class="fas fa-arrow-left"></i>
-        Voltar
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="pd-topbar">
+    <a href="index.html#projetos" class="pd-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Voltar
     </a>
+    <a href="index.html" class="pd-logo">Carlos<span style="color:#C8FF00">.</span></a>
+  </div>
 
-    <main class="project-detail-page">
-        <div class="interface">
-            <div class="project-header">
-                <h1>Sistema de Gerenciamento de <span>Encomendas</span></h1>
-            </div>
+  <main class="pd-page">
+    <div class="pd-breadcrumb">
+      <a href="index.html">Início</a>
+      <span>/</span>
+      <a href="index.html#projetos">Projetos</a>
+      <span>/</span>
+      Sistema de Encomendas
+    </div>
 
-            <div class="project-image"></div>
+    <div class="pd-header">
+      <span class="pd-num">02 — Projeto</span>
+      <h1 class="pd-title">Sistema de<br>Encomendas</h1>
+      <div class="pd-tags">
+        <span class="pd-tag lime">Desktop App</span>
+        <span class="pd-tag">Java</span>
+        <span class="pd-tag">SQLite</span>
+        <span class="pd-tag">Swing</span>
+        <span class="pd-tag">Tio Léo Utilidades</span>
+      </div>
+    </div>
 
-            <div class="project-content">
-                <div class="project-section">
-                    <h2><i class="fas fa-info-circle"></i> Sobre o Projeto</h2>
-                    <p>
-                        Este sistema foi desenvolvido para a loja Tio Léo Utilidades com o objetivo de gerenciar 
-                        de forma eficiente todas as encomendas realizadas pelos clientes. O sistema permite 
-                        cadastrar, visualizar, atualizar e controlar o status de cada encomenda, facilitando 
-                        o acompanhamento e organização do negócio.
-                    </p>
-                    <p>
-                        O projeto foi criado para resolver problemas de organização e controle de pedidos, 
-                        permitindo que a loja tenha um melhor controle sobre as encomendas em andamento e 
-                        concluídas, além de facilitar a comunicação com os clientes sobre o status de seus pedidos.
-                    </p>
-                </div>
+    <div class="pd-img">
+      <img src="img/encomendas2.png" alt="Sistema de Gerenciamento de Encomendas" loading="eager">
+    </div>
 
-                <div class="project-section">
-                    <h2><i class="fas fa-bullseye"></i> Objetivo</h2>
-                    <p>
-                        O objetivo principal deste sistema é fornecer uma solução completa e intuitiva para 
-                        o gerenciamento de encomendas da loja, permitindo:
-                    </p>
-                    <ul style="color: #b3b0b0 !important; line-height: 2; font-size: 18px; margin-left: 20px; list-style-type: disc;">
-                        <li>Cadastro e controle de encomendas</li>
-                        <li>Gerenciamento de status (pendente, em produção, concluído, entregue)</li>
-                        <li>Organização e busca de informações</li>
-                        <li>Interface amigável e fácil de usar</li>
-                        <li>Armazenamento seguro dos dados</li>
-                    </ul>
-                </div>
+    <div class="pd-section">
+      <h2>Sobre o Projeto</h2>
+      <p>Sistema desenvolvido para a loja Tio Léo Utilidades com o objetivo de gerenciar de forma eficiente todas as encomendas realizadas pelos clientes. Permite cadastrar, visualizar, atualizar e controlar o status de cada encomenda, facilitando o acompanhamento e organização do negócio.</p>
+      <p>O projeto foi criado para resolver problemas de organização e controle de pedidos, permitindo à loja ter controle sobre as encomendas em andamento e concluídas, além de facilitar a comunicação com os clientes sobre o status de seus pedidos.</p>
+    </div>
 
-                <div class="project-section">
-                    <h2><i class="fas fa-code"></i> Tecnologias Utilizadas</h2>
-                    <div class="technologies-grid">
-                        <div class="tech-item">
-                            <i class="fab fa-java"></i>
-                            <h3>Java</h3>
-                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Linguagem principal do projeto</p>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-database"></i>
-                            <h3>SQLite</h3>
-                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Banco de dados</p>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-window-maximize"></i>
-                            <h3>Swing</h3>
-                            <p style="font-size: 14px; color: #b3b0b0 !important; margin: 0;">Interface gráfica</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="pd-section">
+      <h2>Objetivos</h2>
+      <ul class="pd-list">
+        <li>Cadastro e controle de encomendas</li>
+        <li>Gerenciamento de status (pendente, em produção, concluído, entregue)</li>
+        <li>Organização e busca de informações</li>
+        <li>Interface amigável e fácil de usar</li>
+        <li>Armazenamento seguro dos dados</li>
+      </ul>
+    </div>
 
-                <div class="project-section">
-                    <h2><i class="fas fa-wrench"></i> O Que Foi Utilizado</h2>
-                    <p>
-                        <strong>Java:</strong> Utilizei Java como linguagem principal para desenvolvimento da lógica 
-                        de negócio e funcionalidades do sistema. O Java proporciona uma base sólida e confiável 
-                        para aplicações desktop.
-                    </p>
-                    <p>
-                        <strong>SQLite:</strong> Escolhi SQLite como banco de dados por ser leve, eficiente e não 
-                        requerer configuração de servidor. É ideal para aplicações desktop, armazenando todos os 
-                        dados de forma organizada e segura.
-                    </p>
-                    <p>
-                        <strong>Swing:</strong> Para a interface gráfica, utilizei o Swing, framework nativo do Java 
-                        que permite criar interfaces desktop modernas e responsivas. A interface foi projetada para 
-                        ser intuitiva e fácil de usar.
-                    </p>
-                </div>
+    <div class="pd-section">
+      <h2>Tecnologias</h2>
+      <div class="pd-tech-grid">
+        <div class="pd-tech"><strong>Java</strong><span>Linguagem principal</span></div>
+        <div class="pd-tech"><strong>SQLite</strong><span>Banco de dados</span></div>
+        <div class="pd-tech"><strong>Swing</strong><span>Interface gráfica</span></div>
+      </div>
+    </div>
 
-                <div class="project-links">
-                    <a href="https://github.com/Carlinn01/Encomendas" target="_blank" rel="noopener" class="project-link">
-                        <i class="fab fa-github"></i>
-                        Ver no GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
+    <div class="pd-section">
+      <h2>Como foi feito</h2>
+      <p><strong>Java:</strong> Linguagem principal para desenvolvimento da lógica de negócio e funcionalidades do sistema. O Java proporciona uma base sólida e confiável para aplicações desktop.</p>
+      <p><strong>SQLite:</strong> Banco de dados leve, eficiente e sem necessidade de configuração de servidor. Ideal para aplicações desktop, armazenando todos os dados de forma organizada e segura.</p>
+      <p><strong>Swing:</strong> Framework nativo do Java para criar interfaces desktop. A interface foi projetada para ser intuitiva e fácil de usar, com campos claros e navegação simples.</p>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="pd-actions">
+      <a href="https://github.com/Carlinn01/Encomendas" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-lime">
+        Ver no GitHub ↗
+      </a>
+      <a href="index.html#projetos" class="pd-btn pd-btn-outline">
+        ← Outros projetos
+      </a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
