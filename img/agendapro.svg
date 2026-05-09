@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F0F11"/>
+      <stop offset="100%" style="stop-color:#141418"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1E"/>
+      <stop offset="100%" style="stop-color:#131316"/>
+    </linearGradient>
+    <linearGradient id="accent-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B61FF;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#7B61FF;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Subtle grid dots -->
+  <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.04)"/>
+  </pattern>
+  <rect width="1200" height="675" fill="url(#dots)"/>
+
+  <!-- Accent glow top-left -->
+  <ellipse cx="200" cy="180" rx="320" ry="220" fill="url(#accent-glow)"/>
+
+  <!-- Nav bar mockup -->
+  <rect x="60" y="50" width="1080" height="52" rx="12" fill="#0F0F11" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Nav logo -->
+  <rect x="84" y="66" width="20" height="20" rx="5" fill="#7B61FF"/>
+  <text x="112" y="80" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#F0F0F2">AgendaPro</text>
+  <!-- Nav links -->
+  <text x="650" y="80" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Dashboard</text>
+  <text x="740" y="80" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Calendário</text>
+  <text x="830" y="80" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Serviços</text>
+  <!-- Nav badge -->
+  <rect x="980" y="62" width="140" height="28" rx="8" fill="rgba(123,97,255,0.15)" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+  <text x="1050" y="80" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7B61FF" text-anchor="middle">Painel Admin</text>
+
+  <!-- Stats row -->
+  <rect x="60" y="128" width="244" height="88" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="84" y="155" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Hoje</text>
+  <text x="84" y="185" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#F0F0F2">8</text>
+  <text x="84" y="204" font-family="Inter, sans-serif" font-size="10" fill="#52525B">agendamentos</text>
+
+  <rect x="320" y="128" width="244" height="88" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="344" y="155" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Esta semana</text>
+  <text x="344" y="185" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#F0F0F2">34</text>
+  <text x="344" y="204" font-family="Inter, sans-serif" font-size="10" fill="#52525B">agendamentos</text>
+
+  <rect x="580" y="128" width="244" height="88" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="604" y="155" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Este mês</text>
+  <text x="604" y="185" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#F0F0F2">127</text>
+  <text x="604" y="204" font-family="Inter, sans-serif" font-size="10" fill="#52525B">agendamentos</text>
+
+  <rect x="840" y="128" width="300" height="88" rx="12" fill="rgba(123,97,255,0.08)" stroke="rgba(123,97,255,0.2)" stroke-width="1"/>
+  <text x="864" y="155" font-family="Inter, sans-serif" font-size="11" fill="#71717A">Receita do mês</text>
+  <text x="864" y="185" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#7B61FF">R$ 4.820</text>
+  <text x="864" y="204" font-family="Inter, sans-serif" font-size="10" fill="#52525B">apenas concluídos</text>
+
+  <!-- Calendar section -->
+  <rect x="60" y="238" width="700" height="340" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="84" y="268" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#F0F0F2">Calendário semanal</text>
+  <!-- Calendar header days -->
+  <text x="150" y="296" font-family="Inter, sans-serif" font-size="10" fill="#52525B" text-anchor="middle">SEG</text>
+  <text x="246" y="296" font-family="Inter, sans-serif" font-size="10" fill="#52525B" text-anchor="middle">TER</text>
+  <text x="342" y="296" font-family="Inter, sans-serif" font-size="10" fill="#52525B" text-anchor="middle">QUA</text>
+  <text x="438" y="296" font-family="Inter, sans-serif" font-size="10" fill="#52525B" text-anchor="middle">QUI</text>
+  <text x="534" y="296" font-family="Inter, sans-serif" font-size="10" fill="#52525B" text-anchor="middle">SEX</text>
+  <text x="630" y="296" font-family="Inter, sans-serif" font-size="10" fill="#52525B" text-anchor="middle">SÁB</text>
+
+  <!-- Calendar grid lines -->
+  <line x1="84" y1="308" x2="736" y2="308" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="84" y1="363" x2="736" y2="363" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="84" y1="418" x2="736" y2="418" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="84" y1="473" x2="736" y2="473" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="84" y1="528" x2="736" y2="528" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Hour labels -->
+  <text x="96" y="340" font-family="Inter, sans-serif" font-size="9" fill="#3F3F46">09:00</text>
+  <text x="96" y="395" font-family="Inter, sans-serif" font-size="9" fill="#3F3F46">10:00</text>
+  <text x="96" y="450" font-family="Inter, sans-serif" font-size="9" fill="#3F3F46">11:00</text>
+  <text x="96" y="505" font-family="Inter, sans-serif" font-size="9" fill="#3F3F46">14:00</text>
+
+  <!-- Appointment cards -->
+  <rect x="120" y="313" width="80" height="44" rx="6" fill="rgba(123,97,255,0.15)" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+  <text x="128" y="328" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#A78BFA">09:00</text>
+  <text x="128" y="340" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F0F0F2">João Silva</text>
+  <text x="128" y="351" font-family="Inter, sans-serif" font-size="8" fill="#71717A">Corte Masculino</text>
+
+  <rect x="312" y="313" width="80" height="44" rx="6" fill="rgba(123,97,255,0.15)" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+  <text x="320" y="328" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#A78BFA">09:00</text>
+  <text x="320" y="340" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F0F0F2">Ana Costa</text>
+  <text x="320" y="351" font-family="Inter, sans-serif" font-size="8" fill="#71717A">Coloração</text>
+
+  <rect x="216" y="368" width="80" height="44" rx="6" fill="rgba(123,97,255,0.15)" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+  <text x="224" y="383" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#A78BFA">10:00</text>
+  <text x="224" y="395" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F0F0F2">Pedro Lima</text>
+  <text x="224" y="406" font-family="Inter, sans-serif" font-size="8" fill="#71717A">Barba Completa</text>
+
+  <!-- Blocked slot -->
+  <rect x="408" y="423" width="80" height="44" rx="6" fill="rgba(239,68,68,0.06)" stroke="rgba(239,68,68,0.2)" stroke-width="1"/>
+  <text x="448" y="450" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="rgba(239,68,68,0.5)" text-anchor="middle">BLOQUEADO</text>
+
+  <!-- Booking flow card (right side) -->
+  <rect x="782" y="238" width="358" height="340" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="806" y="268" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#F0F0F2">Booking Flow</text>
+
+  <!-- Step indicator -->
+  <circle cx="830" cy="295" r="10" fill="#7B61FF"/>
+  <text x="830" y="299" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white" text-anchor="middle">1</text>
+  <line x1="840" y1="295" x2="880" y2="295" stroke="#7B61FF" stroke-width="1.5"/>
+  <circle cx="890" cy="295" r="10" fill="#7B61FF"/>
+  <text x="890" y="299" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white" text-anchor="middle">2</text>
+  <line x1="900" y1="295" x2="940" y2="295" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <circle cx="950" cy="295" r="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="950" y="299" font-family="Inter, sans-serif" font-size="9" fill="#52525B" text-anchor="middle">3</text>
+  <line x1="960" y1="295" x2="1000" y2="295" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <circle cx="1010" cy="295" r="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="1010" y="299" font-family="Inter, sans-serif" font-size="9" fill="#52525B" text-anchor="middle">4</text>
+  <line x1="1020" y1="295" x2="1060" y2="295" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <circle cx="1070" cy="295" r="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="1070" y="299" font-family="Inter, sans-serif" font-size="9" fill="#52525B" text-anchor="middle">5</text>
+
+  <!-- Service cards in booking -->
+  <text x="806" y="328" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#A1A1AA">Escolha o serviço</text>
+  <rect x="806" y="336" width="154" height="60" rx="8" fill="rgba(123,97,255,0.12)" stroke="rgba(123,97,255,0.35)" stroke-width="1.5"/>
+  <text x="820" y="358" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#F0F0F2">Corte Masculino</text>
+  <text x="820" y="372" font-family="Inter, sans-serif" font-size="10" fill="#71717A">45 min</text>
+  <text x="944" y="372" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#7B61FF">R$ 55</text>
+
+  <rect x="970" y="336" width="154" height="60" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="984" y="358" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#F0F0F2">Corte + Barba</text>
+  <text x="984" y="372" font-family="Inter, sans-serif" font-size="10" fill="#71717A">60 min</text>
+  <text x="1108" y="372" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#7B61FF">R$ 85</text>
+
+  <rect x="806" y="406" width="154" height="60" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="820" y="428" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#F0F0F2">Coloração</text>
+  <text x="820" y="442" font-family="Inter, sans-serif" font-size="10" fill="#71717A">90 min</text>
+  <text x="944" y="442" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#7B61FF">R$ 120</text>
+
+  <rect x="970" y="406" width="154" height="60" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="984" y="428" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#F0F0F2">Hidratação</text>
+  <text x="984" y="442" font-family="Inter, sans-serif" font-size="10" fill="#71717A">60 min</text>
+  <text x="1108" y="442" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#7B61FF">R$ 80</text>
+
+  <!-- CTA button -->
+  <rect x="806" y="486" width="318" height="40" rx="10" fill="#7B61FF"/>
+  <text x="965" y="511" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">Próximo →</text>
+
+  <!-- WhatsApp badge -->
+  <rect x="806" y="540" width="318" height="28" rx="6" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.15)" stroke-width="1"/>
+  <circle cx="822" cy="554" r="6" fill="#22C55E"/>
+  <text x="834" y="558" font-family="Inter, sans-serif" font-size="10" fill="#86EFAC">Confirmação automática via WhatsApp</text>
+
+  <!-- Bottom label -->
+  <text x="600" y="640" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#3F3F46" text-anchor="middle">AgendaPro — SaaS de Agendamento Online · React + Node.js + MySQL</text>
+</svg>

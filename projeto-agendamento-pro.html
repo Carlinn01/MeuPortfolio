@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaPro — Carlos Oliveira</title>
+  <meta name="description" content="AgendaPro é um SaaS completo de agendamento online com painel admin, drag-and-drop, notificações WhatsApp e suporte a PWA. Desenvolvido por Carlos Oliveira.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Carlos Oliveira">
+  <meta property="og:title" content="AgendaPro - SaaS de Agendamento | Carlos Oliveira">
+  <meta property="og:image" content="https://carlosoliveira.vercel.app/img/agendapro.png">
+  <meta property="og:url" content="https://carlosoliveira.vercel.app/projeto-agendamento-pro.html">
+  <link rel="canonical" href="https://carlosoliveira.vercel.app/projeto-agendamento-pro.html">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PROJECT DETAIL PAGE ── */
+    .pd-topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      z-index: 200;
+      background: rgba(12,12,12,.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid #1E1E1E;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+    .pd-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      font-weight: 500;
+      color: #666;
+      transition: color .2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pd-back:hover { color: #C8FF00; }
+    .pd-back svg { flex-shrink: 0; }
+    .pd-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: auto;
+      color: #F0F0F0;
+    }
+
+    .pd-page {
+      padding: 100px 2rem 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pd-breadcrumb {
+      font-size: .75rem;
+      color: #666;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .pd-breadcrumb a { color: #666; transition: color .2s; }
+    .pd-breadcrumb a:hover { color: #C8FF00; }
+    .pd-breadcrumb span { color: #333; }
+
+    .pd-header { margin-bottom: 3.5rem; }
+    .pd-num {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #C8FF00;
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .pd-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+    .pd-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .pd-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: .3rem .75rem;
+      background: #141414;
+      border: 1px solid #2A2A2A;
+      border-radius: 100px;
+      font-size: .72rem;
+      font-weight: 500;
+      color: #666;
+      letter-spacing: .05em;
+    }
+    .pd-tag.lime { border-color: rgba(200,255,0,.3); color: #C8FF00; }
+
+    .pd-img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid #1E1E1E;
+      margin-bottom: 3.5rem;
+      overflow: hidden;
+      background: #141414;
+    }
+    .pd-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .pd-section {
+      background: #141414;
+      border: 1px solid #1E1E1E;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .pd-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .pd-section h2::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C8FF00;
+      flex-shrink: 0;
+    }
+    .pd-section p {
+      font-size: .92rem;
+      color: #666;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .pd-section p:last-child { margin-bottom: 0; }
+    .pd-section p strong { color: #F0F0F0; font-weight: 500; }
+    .pd-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .pd-list li {
+      font-size: .92rem;
+      color: #666;
+      line-height: 1.7;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .pd-list li::before {
+      content: '↗';
+      position: absolute;
+      left: 0;
+      color: #C8FF00;
+      font-size: .75rem;
+    }
+
+    .pd-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+      margin-top: .5rem;
+    }
+    .pd-tech {
+      background: #0C0C0C;
+      border: 1px solid #2A2A2A;
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: border-color .2s, background .2s;
+    }
+    .pd-tech:hover { border-color: rgba(200,255,0,.4); background: #141414; }
+    .pd-tech strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #F0F0F0;
+      margin-bottom: .2rem;
+    }
+    .pd-tech span {
+      font-size: .72rem;
+      color: #666;
+    }
+
+    .pd-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+    .pd-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      transition: all .3s;
+      cursor: pointer;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .pd-btn-lime { background: #C8FF00; color: #0C0C0C; }
+    .pd-btn-lime:hover { background: #d4ff1a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,255,0,.18); }
+    .pd-btn-outline { background: transparent; color: #F0F0F0; border: 1px solid #2A2A2A; }
+    .pd-btn-outline:hover { border-color: #C8FF00; color: #C8FF00; transform: translateY(-2px); }
+
+    @media (max-width: 600px) {
+      .pd-topbar { padding: 0 1.1rem; }
+      .pd-page { padding: 76px 1.1rem 56px; }
+      .pd-section { padding: 1.5rem; }
+      .pd-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .pd-tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .pd-actions { flex-direction: column; }
+      .pd-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="pd-topbar">
+    <a href="index.html#projetos" class="pd-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M12 7H2M2 7l5-5M2 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Voltar
+    </a>
+    <a href="index.html" class="pd-logo">Carlos<span style="color:#C8FF00">.</span></a>
+  </div>
+
+  <main class="pd-page">
+    <div class="pd-breadcrumb">
+      <a href="index.html">Início</a>
+      <span>/</span>
+      <a href="index.html#projetos">Projetos</a>
+      <span>/</span>
+      AgendaPro
+    </div>
+
+    <div class="pd-header">
+      <span class="pd-num">01 — Projeto</span>
+      <h1 class="pd-title">AgendaPro</h1>
+      <div class="pd-tags">
+        <span class="pd-tag lime">SaaS</span>
+        <span class="pd-tag">Full Stack</span>
+        <span class="pd-tag">React</span>
+        <span class="pd-tag">Node.js</span>
+        <span class="pd-tag">MySQL</span>
+        <span class="pd-tag">WhatsApp API</span>
+        <span class="pd-tag">PWA</span>
+      </div>
+    </div>
+
+    <div class="pd-img">
+      <img src="img/agendapro.svg" alt="AgendaPro — SaaS de Agendamento Online" loading="eager">
+    </div>
+
+    <div class="pd-section">
+      <h2>Sobre o Projeto</h2>
+      <p>O AgendaPro é uma plataforma SaaS completa de agendamento online, desenvolvida para salões, barbearias, clínicas e prestadores de serviço em geral. O cliente agenda em 5 passos guiados diretamente pelo navegador, sem precisar criar conta.</p>
+      <p>O painel administrativo oferece calendário semanal com drag-and-drop para reagendamento, exportação CSV, bloqueio de horários e estatísticas em tempo real. O sistema envia confirmações e lembretes automáticos via WhatsApp.</p>
+    </div>
+
+    <div class="pd-section">
+      <h2>Funcionalidades</h2>
+      <ul class="pd-list">
+        <li>Booking flow em 5 steps com animações GSAP e transições suaves</li>
+        <li>Seleção de serviço, profissional, data e horário em tempo real</li>
+        <li>Prevenção de double booking com transações MySQL (SELECT FOR UPDATE)</li>
+        <li>Painel admin com calendário drag-and-drop e bloqueio de horários</li>
+        <li>Notificações automáticas via WhatsApp (confirmação + lembrete 1h antes)</li>
+        <li>Exportação de agendamentos em CSV compatível com Excel</li>
+        <li>PWA — instalável como app no celular</li>
+        <li>Arquitetura white-label: troca de cliente em um único arquivo de configuração</li>
+        <li>Autenticação JWT com expiração e redirecionamento automático</li>
+        <li>Landing page com cursor animado, pricing, FAQ e scroll suavizado (Lenis)</li>
+      </ul>
+    </div>
+
+    <div class="pd-section">
+      <h2>Tecnologias</h2>
+      <div class="pd-tech-grid">
+        <div class="pd-tech"><strong>React 18</strong><span>Frontend</span></div>
+        <div class="pd-tech"><strong>Node.js</strong><span>Backend</span></div>
+        <div class="pd-tech"><strong>Express</strong><span>API REST</span></div>
+        <div class="pd-tech"><strong>MySQL 8</strong><span>Banco de dados</span></div>
+        <div class="pd-tech"><strong>GSAP</strong><span>Animações</span></div>
+        <div class="pd-tech"><strong>@dnd-kit</strong><span>Drag & Drop</span></div>
+        <div class="pd-tech"><strong>JWT</strong><span>Autenticação</span></div>
+        <div class="pd-tech"><strong>WhatsApp API</strong><span>Notificações</span></div>
+        <div class="pd-tech"><strong>PWA</strong><span>Mobile App</span></div>
+        <div class="pd-tech"><strong>Vite</strong><span>Build tool</span></div>
+      </div>
+    </div>
+
+    <div class="pd-section">
+      <h2>Como foi feito</h2>
+      <p><strong>Frontend:</strong> React 18 com Vite, React Router v6 e @dnd-kit para o calendário drag-and-drop. Cada step do booking flow tem animação de entrada com GSAP. O sistema de toast usa Context API para feedback em toda a aplicação.</p>
+      <p><strong>Backend:</strong> Node.js com Express, validação com express-validator e autenticação JWT. Todas as queries usam parâmetros para prevenir SQL injection. O slot de disponibilidade é calculado em tempo real cruzando agendamentos e bloqueios.</p>
+      <p><strong>Banco de dados:</strong> MySQL 8 com 5 tabelas relacionais. O anti-double-booking usa transação com SELECT FOR UPDATE para garantir consistência mesmo sob requisições simultâneas.</p>
+      <p><strong>WhatsApp:</strong> Integração com Evolution API para envio de confirmações imediatas e lembretes automáticos 1 hora antes via node-cron. Se a API não estiver configurada, o sistema funciona normalmente sem notificações.</p>
+    </div>
+
+    <div class="pd-actions">
+      <a href="https://github.com/Carlinn01/agendamento-pro" target="_blank" rel="noopener noreferrer" class="pd-btn pd-btn-lime">
+        Ver no GitHub ↗
+      </a>
+      <a href="index.html#projetos" class="pd-btn pd-btn-outline">
+        ← Outros projetos
+      </a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
