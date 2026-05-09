@@ -889,10 +889,11 @@ button { font-family: var(--body); -webkit-tap-highlight-color: transparent; tou
   .hero { background-image: none; }
   .hero-pts { display: none; }
   .hero__title {
-    font-size: clamp(2.2rem, 11vw, 3.5rem);
+    font-size: clamp(2rem, 8vw, 3.5rem);
     max-width: none;
+    overflow: hidden;
   }
-  .hero__line { white-space: normal !important; }
+  .hero__line { white-space: nowrap; }
   .hero__title:hover .lhop { animation: none; }
   .hero__foot { flex-direction: column; align-items: flex-start; gap: 2rem; }
   .hero__photo { display: none; }
@@ -911,7 +912,7 @@ button { font-family: var(--body); -webkit-tap-highlight-color: transparent; tou
   .skills__grid { grid-template-columns: 1fr; }
   .about__stats { flex-wrap: wrap; }
   .hero__btns { flex-direction: column; align-items: flex-start; gap: .9rem; }
-  .hero__title { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .hero__title { font-size: clamp(1.7rem, 7vw, 2rem); }
   .footer__wrap { flex-direction: column; text-align: center; }
   .proj-item { aspect-ratio: 3/2; }
   .contact__grid { gap: 2rem; }
@@ -921,7 +922,7 @@ button { font-family: var(--body); -webkit-tap-highlight-color: transparent; tou
 
 /* iPhone SE / small phones */
 @media (max-width: 375px) {
-  .hero__title { font-size: clamp(1.7rem, 8.5vw, 2.2rem); }
+  .hero__title { font-size: clamp(1.5rem, 6.5vw, 1.75rem); }
   .section { padding: 56px 1rem; }
   .about__stats { gap: .5rem; }
   .stat { padding: .75rem .5rem; }
