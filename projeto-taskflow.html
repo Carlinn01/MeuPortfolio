@@ -59,7 +59,15 @@
     .pd-btn-lime:hover { background: #d4ff1a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,255,0,.18); }
     .pd-btn-outline { background: transparent; color: #F0F0F0; border: 1px solid #2A2A2A; }
     .pd-btn-outline:hover { border-color: #C8FF00; color: #C8FF00; transform: translateY(-2px); }
-    @media (max-width: 600px) { .pd-page { padding: 80px 1.1rem 60px; } .pd-section { padding: 1.75rem; } .pd-tech-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) {
+      .pd-topbar { padding: 0 1.1rem; }
+      .pd-page { padding: 76px 1.1rem 56px; }
+      .pd-section { padding: 1.5rem; }
+      .pd-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .pd-tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .pd-actions { flex-direction: column; }
+      .pd-btn { width: 100%; justify-content: center; }
+    }
   </style>
 </head>
 <body>
