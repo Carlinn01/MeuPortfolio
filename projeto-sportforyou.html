@@ -15,11 +15,235 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PROJECT DETAIL PAGE ── */
+    .pd-topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      z-index: 200;
+      background: rgba(12,12,12,.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid #1E1E1E;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+    .pd-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      font-weight: 500;
+      color: #666;
+      transition: color .2s;
+    }
+    .pd-back:hover { color: #C8FF00; }
+    .pd-back svg { flex-shrink: 0; }
+    .pd-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: auto;
+      color: #F0F0F0;
+    }
+
+    .pd-page {
+      padding: 100px 2rem 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pd-breadcrumb {
+      font-size: .75rem;
+      color: #666;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .pd-breadcrumb a { color: #666; transition: color .2s; }
+    .pd-breadcrumb a:hover { color: #C8FF00; }
+    .pd-breadcrumb span { color: #333; }
+
+    .pd-header { margin-bottom: 3.5rem; }
+    .pd-num {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #C8FF00;
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .pd-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+    .pd-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .pd-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: .3rem .75rem;
+      background: #141414;
+      border: 1px solid #2A2A2A;
+      border-radius: 100px;
+      font-size: .72rem;
+      font-weight: 500;
+      color: #666;
+      letter-spacing: .05em;
+    }
+    .pd-tag.lime { border-color: rgba(200,255,0,.3); color: #C8FF00; }
+
+    .pd-img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid #1E1E1E;
+      margin-bottom: 3.5rem;
+      overflow: hidden;
+      background: #141414;
+    }
+    .pd-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .pd-sections { display: flex; flex-direction: column; gap: 1px; }
+
+    .pd-section {
+      background: #141414;
+      border: 1px solid #1E1E1E;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .pd-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .pd-section h2::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C8FF00;
+      flex-shrink: 0;
+    }
+    .pd-section p {
+      font-size: .92rem;
+      color: #666;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .pd-section p:last-child { margin-bottom: 0; }
+    .pd-section p strong { color: #F0F0F0; font-weight: 500; }
+    .pd-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .pd-list li {
+      font-size: .92rem;
+      color: #666;
+      line-height: 1.7;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .pd-list li::before {
+      content: '↗';
+      position: absolute;
+      left: 0;
+      color: #C8FF00;
+      font-size: .75rem;
+    }
+
+    .pd-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem;
+      margin-top: .5rem;
+    }
+    .pd-tech {
+      background: #0C0C0C;
+      border: 1px solid #2A2A2A;
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: border-color .2s, background .2s;
+    }
+    .pd-tech:hover { border-color: rgba(200,255,0,.4); background: #141414; }
+    .pd-tech strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #F0F0F0;
+      margin-bottom: .2rem;
+    }
+    .pd-tech span {
+      font-size: .72rem;
+      color: #666;
+    }
+
+    .pd-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+    .pd-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      transition: all .3s;
+      cursor: pointer;
+      border: none;
+    }
+    .pd-btn-lime { background: #C8FF00; color: #0C0C0C; }
+    .pd-btn-lime:hover { background: #d4ff1a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,255,0,.18); }
+    .pd-btn-outline { background: transparent; color: #F0F0F0; border: 1px solid #2A2A2A; }
+    .pd-btn-outline:hover { border-color: #C8FF00; color: #C8FF00; transform: translateY(-2px); }
+
+    @media (max-width: 600px) {
+      .pd-topbar { padding: 0 1.1rem; }
+      .pd-page { padding: 76px 1.1rem 56px; }
+      .pd-section { padding: 1.5rem; }
+      .pd-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .pd-actions { flex-direction: column; }
+      .pd-btn { width: 100%; justify-content: center; }
+    }
+  </style>
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
 
   <div class="pd-topbar">
     <a href="index.html#projetos" class="pd-back">
@@ -28,7 +252,7 @@
       </svg>
       Voltar
     </a>
-    <a href="index.html" class="pd-logo">Carlos</a>
+    <a href="index.html" class="pd-logo">Carlos<span style="color:#C8FF00">.</span></a>
   </div>
 
   <main class="pd-page">
@@ -104,5 +328,7 @@
       </a>
     </div>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
