@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carlos Oliveira — Desenvolvedor Full Stack</title>
-  <meta name="description" content="Carlos Oliveira, desenvolvedor Full Stack especializado em criar sistemas e experiências digitais que fazem diferença. HTML, CSS, JavaScript, PHP, Java e MySQL.">
-  <meta name="keywords" content="Desenvolvedor Full Stack, Programador Web, Carlos Oliveira, PHP, Java, JavaScript, HTML, CSS, MySQL, Freelancer">
+  <meta name="description" content="Carlos Oliveira, desenvolvedor full stack em Ibiam, SC. Sites e sistemas web com HTML, CSS, JavaScript, React, PHP, Java, Node.js e MySQL.">
+  <meta name="keywords" content="Desenvolvedor Full Stack, Programador Web, Carlos Oliveira, PHP, Java, JavaScript, React, Node.js, MySQL, Freelancer, Ibiam, SC">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Carlos Oliveira">
   <meta name="language" content="Portuguese">
@@ -15,22 +15,20 @@
   <meta name="google-site-verification" content="BkdmsU5Rgkxj6nlt0ZsmWImmA_8y3apBxKU5TJjkqOI">
 
   <meta property="og:title" content="Carlos Oliveira — Desenvolvedor Full Stack">
-  <meta property="og:description" content="Desenvolvedor Full Stack criando sistemas e experiências digitais únicas.">
-  <meta property="og:image" content="https://carlosoliveira.vercel.app/img/MinhaFoto.png">
+  <meta property="og:description" content="Desenvolvedor full stack em Ibiam, SC. Sites e sistemas web, do banco de dados à interface.">
   <meta property="og:url" content="https://carlosoliveira.vercel.app">
   <meta property="og:type" content="website">
 
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Carlos Oliveira — Desenvolvedor Full Stack">
-  <meta name="twitter:description" content="Desenvolvedor Full Stack criando sistemas e experiências digitais únicas.">
-  <meta name="twitter:image" content="https://carlosoliveira.vercel.app/img/MinhaFoto.png">
+  <meta name="twitter:description" content="Desenvolvedor full stack em Ibiam, SC. Sites e sistemas web, do banco de dados à interface.">
 
   <link rel="canonical" href="https://carlosoliveira.vercel.app/">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
@@ -40,9 +38,8 @@
     "@type": "Person",
     "name": "Carlos Oliveira",
     "jobTitle": "Desenvolvedor Full Stack",
-    "description": "Desenvolvedor Full Stack especializado em criar sistemas e experiências digitais com HTML, CSS, JavaScript, PHP, Java e MySQL",
+    "description": "Desenvolvedor full stack em Ibiam, SC. Sites e sistemas web com HTML, CSS, JavaScript, React, PHP, Java, Node.js e MySQL",
     "url": "https://carlosoliveira.vercel.app",
-    "image": "https://carlosoliveira.vercel.app/img/MinhaFoto.png",
     "sameAs": [
       "https://www.instagram.com/_carlos.oliveiraa",
       "https://github.com/Carlinn01",
@@ -56,403 +53,179 @@
     },
     "email": "carloseduardodalazenoliveira@gmail.com",
     "telephone": "+55 (49) 99952-9673",
-    "knowsAbout": ["HTML", "CSS", "JavaScript", "PHP", "Java", "MySQL", "Full Stack Development"]
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "PHP", "Java", "Node.js", "MySQL", "Full Stack Development"]
   }
   </script>
 </head>
 
 <body>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
-  <div class="grain" aria-hidden="true"></div>
-
-  <header class="nav" id="nav">
-    <div class="nav__wrap">
-      <a href="#inicio" class="nav__logo">Carlos Oliveira<span class="lime">.</span></a>
-
-      <nav class="nav__links" aria-label="Navegação principal">
-        <a href="#sobre" class="nav__link">Sobre</a>
-        <a href="#especialidades" class="nav__link">Skills</a>
-        <a href="#projetos" class="nav__link">Projetos</a>
-        <a href="#formulario" class="nav__link">Contato</a>
+  <header class="top">
+    <div class="wrap">
+      <a href="#" class="top__name">Carlos Oliveira</a>
+      <nav class="top__nav" aria-label="Navegação principal">
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
       </nav>
-
-      <a href="#formulario" class="btn btn-outline nav__cta" data-mag>Contrate&#8209;me</a>
-
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
 
-  <div class="mob-menu" id="mobMenu" aria-hidden="true">
-    <nav>
-      <a href="#sobre" class="mob-link">Sobre</a>
-      <a href="#especialidades" class="mob-link">Skills</a>
-      <a href="#projetos" class="mob-link">Projetos</a>
-      <a href="#formulario" class="mob-link">Contato</a>
-    </nav>
-  </div>
-
   <main>
-    <section id="inicio" class="hero">
-      <div class="hero__wrap">
-        <div class="hero__available">
-          <span class="hero__dot"></span>
-          Disponível para novos projetos
+    <section class="intro">
+      <div class="wrap">
+        <p class="intro__lead">
+          Sou desenvolvedor full stack em Ibiam, SC. Faço sites e sistemas web,
+          do banco de dados à interface, para <em>negócios de verdade</em>, como
+          a Tio Léo Utilidades, loja para a qual fiz dois sistemas.
+        </p>
+        <div class="intro__links">
+          <a class="link" href="mailto:carloseduardodalazenoliveira@gmail.com">E-mail</a>
+          <a class="link" href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="link" href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="link" href="https://www.instagram.com/_carlos.oliveiraa" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
-
-        <h1 class="hero__title">
-          <span class="hero__line">Sites e sistemas</span>
-          <span class="hero__line">que funcionam</span>
-          <span class="hero__line lime">de verdade.</span>
-        </h1>
-
-        <div class="hero__foot">
-          <div class="hero__meta">
-            <p class="hero__desc">
-              Desenvolvo soluções digitais completas — do design visual ao banco de dados — para negócios que precisam de <strong>resultado real.</strong>
-            </p>
-            <div class="hero__btns">
-              <a href="#projetos" class="btn btn-lime" data-mag>
-                Ver projetos <span class="arr">↗</span>
-              </a>
-              <a href="#formulario" class="hero__scroll">
-                Falar sobre meu projeto
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-        </div>
+        <p class="intro__status mono">Aceitando projetos freelance</p>
       </div>
     </section>
 
-    <div class="marquee-wrap" aria-hidden="true">
-      <div class="marquee">
-        <div class="marquee__track">
-          <span>HTML5</span><i>·</i>
-          <span>CSS3</span><i>·</i>
-          <span>JavaScript</span><i>·</i>
-          <span>PHP</span><i>·</i>
-          <span>Java</span><i>·</i>
-          <span>MySQL</span><i>·</i>
-          <span>HTML5</span><i>·</i>
-          <span>CSS3</span><i>·</i>
-          <span>JavaScript</span><i>·</i>
-          <span>PHP</span><i>·</i>
-          <span>Java</span><i>·</i>
-          <span>MySQL</span><i>·</i>
-          <span>HTML5</span><i>·</i>
-          <span>CSS3</span><i>·</i>
-          <span>JavaScript</span><i>·</i>
-          <span>PHP</span><i>·</i>
-          <span>Java</span><i>·</i>
-          <span>MySQL</span><i>·</i>
-        </div>
-      </div>
-    </div>
+    <section id="projetos" class="block">
+      <div class="wrap">
+        <h2 class="block__title">Projetos</h2>
 
-    <section id="sobre" class="section about">
-      <div class="section__head reveal">
-        <span class="sec-num">01</span>
-        <h2 class="sec-title">Sobre mim</h2>
-      </div>
-
-      <div class="about__grid">
-        <div class="about__left reveal">
-          <div class="about__img-wrap">
-            <img src="img/MinhaFoto.png" alt="Carlos Oliveira — Desenvolvedor Full Stack" loading="lazy">
-            <div class="about__img-accent"></div>
+        <a href="projeto-encomendas.html" class="work">
+          <div>
+            <h3 class="work__name">Sistema de Encomendas</h3>
+            <p class="work__desc">App desktop que a Tio Léo Utilidades usa para controlar os pedidos dos clientes.</p>
+            <p class="work__stack mono">Java · Swing · SQLite</p>
           </div>
-          <div class="about__stats">
-            <div class="stat">
-              <strong class="stat__n">20+</strong>
-              <span class="stat__l">Projetos</span>
-            </div>
-            <div class="stat">
-              <strong class="stat__n counter" data-to="18">0</strong>
-              <span class="stat__l">Anos</span>
-            </div>
-            <div class="stat">
-              <strong class="stat__n">6</strong>
-              <span class="stat__l">Tecnologias</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="about__right reveal">
-          <p class="about__lead">
-            Olá! Sou o Carlos — desenvolvedor Full Stack que transforma necessidades reais em código que funciona, sem enrolação.
-          </p>
-          <p class="about__body">
-            Com base técnica construída no técnico integrado em Informática e aprofundada no curso de Ciências da Computação na UNOESC, entrego projetos com código limpo, organizado e fácil de manter.
-          </p>
-          <p class="about__body">
-            Cada projeto recebe atenção total — da primeira conversa ao deploy. Não entrego só código: entrego uma solução que resolve o seu problema real e vai além do esperado.
-          </p>
-
-          <div class="about__social">
-            <a href="https://www.instagram.com/_carlos.oliveiraa" target="_blank" rel="noopener noreferrer" class="soc-link" data-mag>
-              Instagram
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer" class="soc-link" data-mag>
-              GitHub
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener noreferrer" class="soc-link" data-mag>
-              LinkedIn
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="especialidades" class="section skills">
-      <div class="section__head reveal">
-        <span class="sec-num">02</span>
-        <h2 class="sec-title">Especialidades</h2>
-      </div>
-
-      <div class="skills__grid reveal">
-        <div class="skill-card">
-          <div class="skill-card__tag">HTML5</div>
-          <p class="skill-card__desc">Estrutura semântica, acessível e otimizada para SEO</p>
-          <span class="skill-card__badge">Desenvolvimento Web</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">CSS3</div>
-          <p class="skill-card__desc">Layouts modernos, animações e design responsivo pixel-perfect</p>
-          <span class="skill-card__badge">Desenvolvimento Web</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">JavaScript</div>
-          <p class="skill-card__desc">Interatividade, integração de APIs e lógica no cliente</p>
-          <span class="skill-card__badge">Desenvolvimento Web</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">PHP</div>
-          <p class="skill-card__desc">Backend seguro com autenticação, rotas e APIs REST</p>
-          <span class="skill-card__badge">Backend</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">Java</div>
-          <p class="skill-card__desc">Lógica robusta e orientada a objetos para sistemas complexos</p>
-          <span class="skill-card__badge">Backend</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">C</div>
-          <p class="skill-card__desc">Programação estruturada, controle de memória e algoritmos</p>
-          <span class="skill-card__badge">Linguagem Base</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">MySQL</div>
-          <p class="skill-card__desc">Modelagem relacional, queries otimizadas e integridade de dados</p>
-          <span class="skill-card__badge">Banco de Dados</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">Git &amp; GitHub</div>
-          <p class="skill-card__desc">Versionamento, colaboração e deploy de projetos profissionais</p>
-          <span class="skill-card__badge">Ferramentas</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">Figma</div>
-          <p class="skill-card__desc">Prototipação e conversão fiel de designs em código funcional</p>
-          <span class="skill-card__badge">Design & UI</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">React</div>
-          <p class="skill-card__desc">Interfaces modernas com componentes, hooks e estado reativo</p>
-          <span class="skill-card__badge">Frontend</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">Node.js</div>
-          <p class="skill-card__desc">Servidores rápidos e APIs RESTful com JavaScript no backend</p>
-          <span class="skill-card__badge">Backend</span>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__tag">Express</div>
-          <p class="skill-card__desc">Roteamento, middlewares e arquitetura limpa para APIs</p>
-          <span class="skill-card__badge">Backend</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projetos" class="section projects">
-      <div class="section__head reveal">
-        <span class="sec-num">03</span>
-        <h2 class="sec-title">Projetos</h2>
-      </div>
-
-      <div class="proj-grid">
-        <article class="proj-item reveal">
-          <a href="projeto-agendamento-pro.html" class="proj-item__link">
-            <figure class="proj-item__img">
-              <img src="img/cover-agendapro.png" alt="AgendaPro" loading="lazy">
-            </figure>
-            <div class="proj-item__info">
-              <span class="proj-item__num">01</span>
-              <h3 class="proj-item__title">AgendaPro</h3>
-              <p class="proj-item__desc">SaaS de agendamento com painel admin e WhatsApp</p>
-              <span class="proj-item__cta">Ver projeto ↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="proj-item reveal">
-          <a href="projeto-taskflow.html" class="proj-item__link">
-            <figure class="proj-item__img">
-              <img src="img/taskflow.png" alt="TaskFlow" loading="lazy">
-            </figure>
-            <div class="proj-item__info">
-              <span class="proj-item__num">02</span>
-              <h3 class="proj-item__title">TaskFlow</h3>
-              <p class="proj-item__desc">Kanban board com drag-and-drop, React e API REST</p>
-              <span class="proj-item__cta">Ver projeto ↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="proj-item reveal">
-          <a href="projeto-sportforyou.html" class="proj-item__link">
-            <figure class="proj-item__img">
-              <img src="img/cover-sportforyou.png" alt="SportForYou" loading="lazy">
-            </figure>
-            <div class="proj-item__info">
-              <span class="proj-item__num">03</span>
-              <h3 class="proj-item__title">SportForYou</h3>
-              <p class="proj-item__desc">Rede social full stack com auth, feed e perfis</p>
-              <span class="proj-item__cta">Ver projeto ↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="proj-item reveal">
-          <a href="projeto-encomendas.html" class="proj-item__link">
-            <figure class="proj-item__img">
-              <img src="img/cover-encomendas.png" alt="Sistema de Encomendas" loading="lazy">
-            </figure>
-            <div class="proj-item__info">
-              <span class="proj-item__num">04</span>
-              <h3 class="proj-item__title">Sistema de Encomendas</h3>
-              <p class="proj-item__desc">Desktop app para gestão de pedidos em loja real</p>
-              <span class="proj-item__cta">Ver projeto ↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="proj-item reveal">
-          <a href="projeto-gastrolab.html" class="proj-item__link">
-            <figure class="proj-item__img">
-              <img src="img/cover-gastrolab.png" alt="GastroLab" loading="lazy">
-            </figure>
-            <div class="proj-item__info">
-              <span class="proj-item__num">05</span>
-              <h3 class="proj-item__title">GastroLab</h3>
-              <p class="proj-item__desc">Site institucional focado em conversão de clientes</p>
-              <span class="proj-item__cta">Ver projeto ↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="proj-item reveal">
-          <a href="projeto-pixpremiado.html" class="proj-item__link">
-            <figure class="proj-item__img">
-              <img src="img/cover-pixpremiado.png" alt="Pix Premiado" loading="lazy">
-            </figure>
-            <div class="proj-item__info">
-              <span class="proj-item__num">06</span>
-              <h3 class="proj-item__title">Pix Premiado</h3>
-              <p class="proj-item__desc">Sistema de rifas com painel admin e Pix integrado</p>
-              <span class="proj-item__cta">Ver projeto ↗</span>
-            </div>
-          </a>
-        </article>
-      </div>
-
-      <div class="proj-more reveal">
-        <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-mag>
-          Ver mais no GitHub ↗
+          <div class="work__thumb"><img src="img/encomendas2.png" alt="" loading="lazy"></div>
         </a>
+
+        <a href="projeto-pixpremiado.html" class="work">
+          <div>
+            <h3 class="work__name">Pix Premiado</h3>
+            <p class="work__desc">Sistema de rifas com pagamento via Pix e painel admin, também para a Tio Léo.</p>
+            <p class="work__stack mono">PHP · MySQL · JavaScript</p>
+          </div>
+          <div class="work__thumb"><img src="img/pixpremiado.png" alt="" loading="lazy"></div>
+        </a>
+
+        <a href="projeto-agendamento-pro.html" class="work">
+          <div>
+            <h3 class="work__name">AgendaPro</h3>
+            <p class="work__desc">SaaS de agendamento com painel admin e avisos pelo WhatsApp.</p>
+            <p class="work__stack mono">React · Node.js · MySQL · PWA</p>
+          </div>
+          <div class="work__thumb"><img src="img/agendapro.svg" alt="" loading="lazy"></div>
+        </a>
+
+        <a href="projeto-taskflow.html" class="work">
+          <div>
+            <h3 class="work__name">TaskFlow</h3>
+            <p class="work__desc">Quadro Kanban com arrastar e soltar e API REST própria.</p>
+            <p class="work__stack mono">React · Node.js · Express · MySQL</p>
+          </div>
+          <div class="work__thumb"><img src="img/taskflow.png" alt="" loading="lazy"></div>
+        </a>
+
+        <a href="projeto-sportforyou.html" class="work">
+          <div>
+            <h3 class="work__name">SportForYou</h3>
+            <p class="work__desc">Rede social com login, feed e perfis de usuário.</p>
+            <p class="work__stack mono">PHP · MySQL · JavaScript</p>
+          </div>
+          <div class="work__thumb"><img src="img/sportforyou.png" alt="" loading="lazy"></div>
+        </a>
+
+        <a href="projeto-gastrolab.html" class="work">
+          <div>
+            <h3 class="work__name">GastroLab</h3>
+            <p class="work__desc">Site institucional para restaurante, pensado para trazer clientes.</p>
+            <p class="work__stack mono">HTML · CSS · JavaScript</p>
+          </div>
+          <div class="work__thumb"><img src="img/gastrolab.PNG" alt="" loading="lazy"></div>
+        </a>
+
+        <p class="more"><a class="link" href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer">Mais coisas no GitHub</a></p>
       </div>
     </section>
 
-    <section id="formulario" class="section contact">
-      <div class="section__head reveal">
-        <span class="sec-num">04</span>
-        <h2 class="sec-title">Contato</h2>
+    <section id="sobre" class="block">
+      <div class="wrap">
+        <h2 class="block__title">Sobre</h2>
+        <p>
+          Tenho 18 anos. Comecei a programar no técnico integrado em Informática
+          e hoje curso Ciência da Computação na UNOESC.
+        </p>
+        <p>
+          Trabalho no projeto inteiro: converso com quem vai usar, modelo o banco,
+          escrevo o back-end e monto a tela. Prefiro código simples, que outra
+          pessoa consiga ler e manter depois.
+        </p>
+
+        <dl class="tools">
+          <dt>front-end</dt>
+          <dd>HTML, CSS, JavaScript, React</dd>
+          <dt>back-end</dt>
+          <dd>PHP, Java, Node.js, Express</dd>
+          <dt>banco de dados</dt>
+          <dd>MySQL, SQLite</dd>
+          <dt>outros</dt>
+          <dd>C, Git, Figma</dd>
+        </dl>
       </div>
+    </section>
 
-      <div class="contact__grid">
-        <div class="contact__left reveal">
-          <p class="contact__big">Seu projeto<br>começa<br><span class="lime">aqui.</span></p>
-          <p class="contact__sub">
-            Tem uma ideia? Precisa de um site ou sistema? Me conta o que você precisa — sem compromisso. Analiso seu projeto e respondo com clareza em até <strong>24 horas.</strong>
-          </p>
-          <a href="mailto:carloseduardodalazenoliveira@gmail.com" class="contact__email">
-            carloseduardodalazenoliveira@gmail.com
-          </a>
-        </div>
+    <section id="contato" class="block">
+      <div class="wrap">
+        <h2 class="block__title">Contato</h2>
+        <p>
+          Precisa de um site ou sistema? Me conta o que você tem em mente pelo
+          formulário ou direto em
+          <a class="link" href="mailto:carloseduardodalazenoliveira@gmail.com">carloseduardodalazenoliveira@gmail.com</a>.
+          Respondo em até 24 horas.
+        </p>
 
-        <form class="contact__form reveal"
+        <form class="form"
               action="https://formsubmit.co/carloseduardodalazenoliveira@gmail.com"
               method="POST">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://carlosoliveira.vercel.app/obrigado.html">
           <input type="hidden" name="_subject" value="Novo contato do portfólio!">
 
-          <div class="field">
-            <label for="nome">Seu nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Como posso te chamar?" required autocomplete="name">
-          </div>
-
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+          <div class="form__row">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
           </div>
 
           <div class="field">
             <label for="telefone">WhatsApp (opcional)</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel">
+            <input type="tel" id="telefone" name="telefone" autocomplete="tel">
           </div>
 
           <div class="field">
-            <label for="mensagem">Sobre o seu projeto</label>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva o que você precisa — quanto mais detalhes, melhor a proposta." required></textarea>
+            <label for="mensagem">Sobre o projeto</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-lime btn-full" data-mag>
-            Enviar mensagem <span class="arr">↗</span>
-          </button>
+          <button type="submit" class="btn">Enviar</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__wrap">
-      <p class="footer__logo">Carlos Oliveira<span class="lime">.</span></p>
-      <p class="footer__copy">© 2025 Carlos Oliveira</p>
-      <div class="footer__links">
-        <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
+  <footer class="foot">
+    <div class="wrap mono">
+      <span>© 2026 Carlos Oliveira · Ibiam, SC</span>
+      <a class="link" href="#">Voltar ao topo</a>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 
 </html>

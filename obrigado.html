@@ -12,221 +12,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --lime: #C8FF00;
-      --bg: #0C0C0C;
-      --surface: #141414;
-      --border: #1E1E1E;
-      --text: #F0F0F0;
-      --muted: #666;
-      --ease: cubic-bezier(.25, .46, .45, .94);
-    }
-
-    html { overflow-x: hidden; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* ── GRAIN ── */
-    .grain {
-      position: fixed; inset: -50%; width: 200%; height: 200%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9000; animation: grain 8s steps(10) infinite;
-    }
-    @keyframes grain { 0%,100%{transform:translate(0,0)} 10%{transform:translate(-2%,-3%)} 20%{transform:translate(3%,2%)} 30%{transform:translate(-1%,4%)} 40%{transform:translate(4%,-1%)} 50%{transform:translate(-3%,3%)} 60%{transform:translate(2%,-4%)} 70%{transform:translate(-4%,1%)} 80%{transform:translate(1%,-2%)} 90%{transform:translate(-2%,4%)} }
-
-    /* ── TOPBAR ── */
-    .topbar {
-      position: fixed; top: 0; left: 0; right: 0; height: 60px; z-index: 200;
-      background: rgba(12,12,12,.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; padding: 0 2rem; gap: 2rem;
-    }
-    .topbar-logo {
-      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
-      color: var(--text); text-decoration: none; margin-left: auto;
-    }
-    .topbar-logo span { color: var(--lime); }
-
-    /* ── PAGE ── */
-    .page {
-      flex: 1; display: flex; align-items: center; justify-content: center;
-      padding: 80px 2rem 60px;
-      animation: fadeUp .8s var(--ease) both;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translate3d(0, 32px, 0); }
-      to   { opacity: 1; transform: translate3d(0, 0, 0); }
-    }
-
-    .card {
-      max-width: 560px; width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 3.5rem 3rem;
-      text-align: center;
-      position: relative;
-    }
-
-    /* lime top line accent */
-    .card::before {
-      content: '';
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 60px; height: 3px;
-      background: var(--lime);
-      border-radius: 0 0 4px 4px;
-    }
-
-    /* ── ICON ── */
-    .icon-wrap {
-      width: 72px; height: 72px;
-      background: rgba(200,255,0,.1);
-      border: 1px solid rgba(200,255,0,.25);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 2rem;
-    }
-    .icon-wrap svg { width: 32px; height: 32px; }
-
-    /* ── TEXT ── */
-    .eyebrow {
-      font-size: .7rem; font-weight: 700; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--lime);
-      margin-bottom: .75rem; display: block;
-    }
-
-    .heading {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 6vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -.04em;
-      line-height: 1.05;
-      margin-bottom: 1.25rem;
-    }
-    .heading span { color: var(--lime); }
-
-    .body-text {
-      font-size: .92rem; color: var(--muted); line-height: 1.85;
-      max-width: 400px; margin: 0 auto 2.5rem;
-    }
-    .body-text strong { color: var(--text); font-weight: 500; }
-
-    /* ── BUTTONS ── */
-    .actions {
-      display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .75rem 1.5rem; border-radius: 100px;
-      font-size: .85rem; font-weight: 500; font-family: 'Inter', sans-serif;
-      text-decoration: none; transition: all .3s; border: none; cursor: pointer;
-    }
-    .btn-lime { background: var(--lime); color: #0C0C0C; }
-    .btn-lime:hover { background: #d4ff1a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,255,0,.18); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid #2A2A2A; }
-    .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
-
-    /* ── DIVIDER ── */
-    .divider {
-      margin: 2.5rem auto 0;
-      border: none; border-top: 1px solid var(--border);
-    }
-
-    /* ── SOCIAL ── */
-    .social-row {
-      display: flex; gap: 1rem; justify-content: center; margin-top: 1.75rem;
-    }
-    .social-link {
-      width: 40px; height: 40px;
-      border: 1px solid #2A2A2A; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); text-decoration: none;
-      transition: border-color .2s, color .2s;
-    }
-    .social-link:hover { border-color: var(--lime); color: var(--lime); }
-    .social-label {
-      font-size: .75rem; color: var(--muted); margin-top: 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-      .card { padding: 2.5rem 1.5rem; }
-      .actions { flex-direction: column; align-items: center; }
-      .btn { width: 100%; max-width: 260px; justify-content: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
+  <header class="top">
+    <div class="wrap">
+      <a href="index.html" class="top__name">Carlos Oliveira</a>
+    </div>
+  </header>
 
-  <div class="topbar">
-    <a href="index.html" class="topbar-logo">Carlos<span>.</span></a>
-  </div>
-
-  <main class="page">
-    <div class="card">
-
-      <div class="icon-wrap" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 17L13 24L26 9" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-
-      <span class="eyebrow">Mensagem recebida</span>
-
-      <h1 class="heading">
-        Obrigado pelo<br><span>contato!</span>
-      </h1>
-
-      <p class="body-text">
-        Sua mensagem chegou até mim. Vou analisar com atenção e respondo com clareza em até <strong>24 horas</strong> — sem enrolação.
+  <main class="intro">
+    <div class="wrap">
+      <p class="mono">Mensagem enviada</p>
+      <p class="intro__lead" style="margin-top: 1rem;">
+        Obrigado pelo contato. Sua mensagem chegou e eu respondo em até 24 horas.
       </p>
-
-      <div class="actions">
-        <a href="index.html" class="btn btn-lime">
-          ← Voltar ao portfólio
-        </a>
-        <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-          Ver projetos ↗
-        </a>
+      <div class="intro__links">
+        <a class="btn" href="index.html">Voltar ao portfólio</a>
+        <a class="btn btn--ghost" href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-
-      <hr class="divider">
-
-      <p class="social-label">Me encontre nas redes</p>
-      <div class="social-row">
-        <a href="https://github.com/Carlinn01" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/carlos-oliveira-580186331" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/_carlos.oliveiraa" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-          </svg>
-        </a>
-      </div>
-
     </div>
   </main>
 </body>
